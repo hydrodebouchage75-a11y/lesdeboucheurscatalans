@@ -1,164 +1,246 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Les Déboucheurs Catalans | Débouchage & Assainissement 24/7 – 66</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Débouchage de canalisation, assainissement, inspection vidéo. Intervention rapide 24/7 dans tout le 66. Devis gratuit.">
-
-  <link rel="icon" type="image/png" href="./favicon.png">
-  <link rel="stylesheet" href="./styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Les Déboucheurs Catalans — Débouchage & Assainissement 24/7 (66)</title>
+  <meta name="description" content="Débouchage canalisation, inspection, assainissement. Intervention rapide 24/7 dans le 66. Devis gratuit. 06 60 35 69 17." />
+  <meta name="theme-color" content="#D00027" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#accueil" aria-label="Retour à l'accueil">
+        <img class="brand__logo" src="./logo.png" alt="Les Déboucheurs Catalans" />
+      </a>
 
-<!-- HEADER -->
-<header class="topbar">
-  <div class="container topbar__inner">
-    <div class="brand">
-      <img src="./logo.png" alt="Les Déboucheurs Catalans">
+      <nav class="nav" aria-label="Navigation">
+        <a href="#services">Services</a>
+        <a href="#zones">Zone 66</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <a class="btn btn--call" href="tel:+33660356917" aria-label="Appeler 06 60 35 69 17">
+          Appeler
+        </a>
+        <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      </div>
     </div>
 
-    <nav class="nav">
+    <div class="mobilemenu" hidden>
       <a href="#services">Services</a>
-      <a href="#zone">Zone</a>
+      <a href="#zones">Zone 66</a>
+      <a href="#tarifs">Tarifs</a>
       <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="cta">
-      <a class="btn btn--call" href="tel:+33660356917">📞 06 60 35 69 17</a>
+      <a class="btn btn--call btn--block" href="tel:+33660356917">📞 06 60 35 69 17</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero__grid">
+  <main id="accueil">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="flagbar" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
 
-    <div class="hero__text">
-      <span class="badge">Urgence 24h/24 – 7j/7</span>
+        <p class="badge">Urgence 24/7 • Département 66 • Intervention rapide</p>
 
-      <h1>Débouchage & assainissement<br>dans tout le 66</h1>
+        <h1>Débouchage & assainissement<br />dans les Pyrénées-Orientales</h1>
 
-      <p class="lead">
-        Canalisation bouchée, WC, évier, douche, regard ou réseau extérieur ?
-        <strong>Les Déboucheurs Catalans</strong> interviennent rapidement avec du matériel professionnel.
-      </p>
-
-      <ul class="checks">
-        <li>✔ Intervention rapide</li>
-        <li>✔ Devis gratuit</li>
-        <li>✔ Prix annoncés avant intervention</li>
-      </ul>
-
-      <div class="hero__actions">
-        <a href="tel:+33660356917" class="btn btn--primary">📞 Appeler maintenant</a>
-        <a href="#contact" class="btn btn--secondary">Demande de devis</a>
-      </div>
-    </div>
-
-    <div class="hero__image">
-      <img src="./mockup.png" alt="Débouchage canalisation 66">
-    </div>
-
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-  <div class="container">
-    <h2>Nos services</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Débouchage de canalisation</h3>
-        <p>
-          Débouchage WC, évier, lavabo, douche, baignoire, colonnes et canalisations extérieures.
-          Intervention rapide sans casse lorsque possible.
+        <p class="lead">
+          WC, évier, douche, colonne, regards, extérieur… On intervient vite et proprement,
+          avec du matériel pro pour un résultat durable.
         </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="tel:+33660356917">📞 06 60 35 69 17</a>
+          <a class="btn btn--secondary" href="#contact">Demander un devis</a>
+        </div>
+
+        <div class="proof">
+          <div class="proof__item">
+            <div class="proof__title">Devis gratuit</div>
+            <div class="proof__text">On annonce avant d’intervenir</div>
+          </div>
+          <div class="proof__item">
+            <div class="proof__title">Sans surprise</div>
+            <div class="proof__text">Tarif clair & transparent</div>
+          </div>
+          <div class="proof__item">
+            <div class="proof__title">24/7</div>
+            <div class="proof__text">Urgences soirs & week-ends</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Nos services</h2>
+          <p>Des solutions simples, efficaces, adaptées à ton problème.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Débouchage canalisation</h3>
+            <p>WC, évier, lavabo, douche, baignoire, extérieur. Objectif : déboucher sans casse si possible.</p>
+            <ul>
+              <li>Diagnostic sur place</li>
+              <li>Intervention rapide</li>
+              <li>Conseils prévention</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Pompage & assainissement</h3>
+            <p>Pompage d’eaux usées, regards, interventions selon besoin. Travail propre et sécurisé.</p>
+            <ul>
+              <li>Matériel professionnel</li>
+              <li>Propreté & respect des lieux</li>
+              <li>Devis avant intervention</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Inspection & diagnostic</h3>
+            <p>Quand ça revient souvent : on aide à identifier la cause (bouchon, défaut, casse…).</p>
+            <ul>
+              <li>Diagnostic précis</li>
+              <li>Préconisations claires</li>
+              <li>Gain de temps & d’argent</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZONES -->
+    <section id="zones" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Zone d’intervention : 66</h2>
+          <p>Perpignan, Canet, Saint-Cyprien, Argelès, Céret, Thuir, Prades… et tout le département.</p>
+        </div>
+
+        <div class="zonebox">
+          <div class="zonebox__left">
+            <div class="zonepill">66</div>
+            <div class="zonetext">
+              <strong>Intervention rapide</strong><br />
+              Déplacement dans le 66 • Urgence 24/7
+            </div>
+          </div>
+          <a class="btn btn--primary" href="tel:+33660356917">Appeler maintenant</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIFS -->
+    <section id="tarifs" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Tarifs</h2>
+          <p>On fait simple : on t’annonce le prix avant d’intervenir.</p>
+        </div>
+
+        <div class="tarifs">
+          <div class="tarif">
+            <div class="tarif__title">Déplacement + diagnostic</div>
+            <div class="tarif__text">Selon zone / urgence (jour-nuit)</div>
+          </div>
+          <div class="tarif">
+            <div class="tarif__title">Débouchage</div>
+            <div class="tarif__text">Selon accès et type de bouchon</div>
+          </div>
+          <div class="tarif">
+            <div class="tarif__title">Interventions spécifiques</div>
+            <div class="tarif__text">Sur devis (pompage, inspection, etc.)</div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div>
+            <strong>Besoin d’un prix tout de suite ?</strong><br />
+            Appelle et dis : ville + problème + urgence ou non.
+          </div>
+          <a class="btn btn--call" href="tel:+33660356917">📞 06 60 35 69 17</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p>Le plus rapide : appel direct. Sinon tu peux laisser un message.</p>
+        </div>
+
+        <div class="contactgrid">
+          <div class="contactcard">
+            <h3>Appel direct</h3>
+            <p class="phone">
+              <a href="tel:+33660356917">📞 06 60 35 69 17</a>
+            </p>
+            <p class="small">
+              Disponible 24/7 (urgences). Déplacement dans le 66.
+            </p>
+          </div>
+
+          <form class="form" action="mailto:contact@tondomaine.fr" method="post" enctype="text/plain">
+            <label>Nom
+              <input name="Nom" autocomplete="name" required />
+            </label>
+
+            <label>Téléphone
+              <input name="Téléphone" autocomplete="tel" inputmode="tel" required />
+            </label>
+
+            <label>Ville
+              <input name="Ville" autocomplete="address-level2" />
+            </label>
+
+            <label>Message
+              <textarea name="Message" rows="5" required></textarea>
+            </label>
+
+            <button class="btn btn--primary btn--block" type="submit">Envoyer</button>
+
+            <p class="formnote">
+              Formulaire “mailto” : ouvre l’email du client. Si tu veux un vrai formulaire (réception automatique),
+              je te le mets gratuitement via Netlify.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <strong>Les Déboucheurs Catalans</strong><br />
+        Débouchage • Assainissement • 66 • 24/7
       </div>
 
-      <div class="card">
-        <h3>Assainissement & pompage</h3>
-        <p>
-          Pompage d’eaux usées, bacs à graisse et réseaux d’assainissement.
-          Solutions efficaces pour particuliers et professionnels.
-        </p>
+      <div class="footer__right">
+        <a href="tel:+33660356917" class="footer__call">📞 06 60 35 69 17</a>
+        <small>© <span id="year"></span> — Tous droits réservés</small>
       </div>
-
-      <div class="card">
-        <h3>Inspection vidéo</h3>
-        <p>
-          Passage caméra pour localiser précisément les bouchons, fissures ou défauts.
-          Diagnostic fiable avant travaux.
-        </p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ZONE -->
-<section id="zone" class="section section--alt">
-  <div class="container split">
-    <div>
-      <h2>Zone d’intervention</h2>
-      <p>
-        Nous intervenons dans tout le <strong>département des Pyrénées-Orientales (66)</strong> :
-        Perpignan, Canet, Saint-Cyprien, Argelès-sur-Mer, Céret, Thuir, Prades et alentours.
-      </p>
-      <p><strong>Disponibilité 24h/24 – 7j/7, y compris week-ends et jours fériés.</strong></p>
-    </div>
+  <!-- Bouton flottant mobile -->
+  <a class="floating" href="tel:+33660356917" aria-label="Appeler">📞</a>
 
-    <div class="urgence">
-      <h3>Besoin d’une intervention urgente ?</h3>
-      <a href="tel:+33660356917" class="btn btn--primary btn--full">📞 06 60 35 69 17</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container split">
-
-    <div>
-      <h2>Contact & devis gratuit</h2>
-      <p>
-        Expliquez-nous votre problème, nous vous répondons rapidement.
-        Pour une urgence, l’appel téléphonique est recommandé.
-      </p>
-
-      <p class="phone">
-        📞 <a href="tel:+33660356917">06 60 35 69 17</a>
-      </p>
-    </div>
-
-    <div class="contact-box">
-      <h3>Appel direct</h3>
-      <p class="big-phone">
-        <a href="tel:+33660356917">06 60 35 69 17</a>
-      </p>
-      <p>Les Déboucheurs Catalans<br>Débouchage & assainissement – 66</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <p>
-      © <span id="year"></span> Les Déboucheurs Catalans<br>
-      Débouchage – Assainissement – Inspection vidéo
-    </p>
-  </div>
-</footer>
-
-<script src="./script.js"></script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+  <script src="./script.js"></script>
 </body>
 </html>
