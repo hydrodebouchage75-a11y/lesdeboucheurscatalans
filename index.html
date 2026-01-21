@@ -3,48 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Les Déboucheurs Catalans — Débouchage & Assainissement 24/7 (66)</title>
-  <meta name="description" content="Débouchage canalisation, inspection, assainissement. Intervention rapide 24/7 dans le 66. Devis gratuit. 06 60 35 69 17." />
+  <title>Les Déboucheurs Catalans — Débouchage 24/7 (66)</title>
+  <meta name="description" content="Débouchage & assainissement dans le 66. Intervention rapide 24/7. Appelez le 06 60 35 69 17." />
   <meta name="theme-color" content="#D00027" />
   <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Google tag (gtag.js) - GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZP5KQCNYDD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZP5KQCNYDD');
+  </script>
 </head>
 
 <body>
-  <!-- Topbar -->
+  <!-- Header sticky (compact) -->
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="#accueil" aria-label="Retour à l'accueil">
         <img class="brand__logo" src="./logo.png" alt="Les Déboucheurs Catalans" />
       </a>
 
-      <nav class="nav" aria-label="Navigation">
-        <a href="#services">Services</a>
-        <a href="#zones">Zone 66</a>
-        <a href="#tarifs">Tarifs</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <!-- tel + tracking -->
+      <a class="btn btn--call" data-track="call" href="tel:+33660356917" aria-label="Appeler 06 60 35 69 17">
+        📞 Appeler
+      </a>
 
-      <div class="topbar__actions">
-        <a class="btn btn--call" href="tel:+33660356917" aria-label="Appeler 06 60 35 69 17">
-          Appeler
-        </a>
-        <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      </div>
-    </div>
-
-    <div class="mobilemenu" hidden>
-      <a href="#services">Services</a>
-      <a href="#zones">Zone 66</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#contact">Contact</a>
-      <a class="btn btn--call btn--block" href="tel:+33660356917">📞 06 60 35 69 17</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     </div>
   </header>
+
+  <!-- MENU OVERLAY (ne reste pas affiché) -->
+  <div class="menuOverlay" hidden>
+    <div class="menuPanel" role="dialog" aria-label="Menu">
+      <div class="menuTop">
+        <strong>Menu</strong>
+        <button class="menuClose" aria-label="Fermer">✕</button>
+      </div>
+
+      <a class="menuItem" href="#services">Services</a>
+      <a class="menuItem" href="#zones">Zone 66</a>
+      <a class="menuItem" href="#tarifs">Tarifs</a>
+      <a class="menuItem" href="#contact">Contact</a>
+
+      <a class="btn btn--primary btn--block" data-track="call" href="tel:+33660356917">📞 06 60 35 69 17</a>
+      <p class="menuNote">Urgence 24/7 • Intervention rapide</p>
+    </div>
+  </div>
 
   <main id="accueil">
     <!-- HERO -->
     <section class="hero">
-      <div class="container">
+      <div class="container hero__card">
         <div class="flagbar" aria-hidden="true">
           <span></span><span></span><span></span><span></span>
         </div>
@@ -59,23 +71,14 @@
         </p>
 
         <div class="hero__cta">
-          <a class="btn btn--primary" href="tel:+33660356917">📞 06 60 35 69 17</a>
-          <a class="btn btn--secondary" href="#contact">Demander un devis</a>
+          <a class="btn btn--primary btn--big" data-track="call" href="tel:+33660356917">📞 06 60 35 69 17</a>
+          <a class="btn btn--secondary" href="#services">Voir les services</a>
         </div>
 
         <div class="proof">
-          <div class="proof__item">
-            <div class="proof__title">Devis gratuit</div>
-            <div class="proof__text">On annonce avant d’intervenir</div>
-          </div>
-          <div class="proof__item">
-            <div class="proof__title">Sans surprise</div>
-            <div class="proof__text">Tarif clair & transparent</div>
-          </div>
-          <div class="proof__item">
-            <div class="proof__title">24/7</div>
-            <div class="proof__text">Urgences soirs & week-ends</div>
-          </div>
+          <div class="proof__item"><strong>Devis gratuit</strong><span>Tarif annoncé avant</span></div>
+          <div class="proof__item"><strong>Sans surprise</strong><span>Prix clair</span></div>
+          <div class="proof__item"><strong>66</strong><span>Déplacement rapide</span></div>
         </div>
       </div>
     </section>
@@ -85,13 +88,13 @@
       <div class="container">
         <div class="section__head">
           <h2>Nos services</h2>
-          <p>Des solutions simples, efficaces, adaptées à ton problème.</p>
+          <p>Simple, efficace, adapté à ton problème.</p>
         </div>
 
         <div class="grid">
           <article class="card">
             <h3>Débouchage canalisation</h3>
-            <p>WC, évier, lavabo, douche, baignoire, extérieur. Objectif : déboucher sans casse si possible.</p>
+            <p>WC, évier, lavabo, douche, baignoire, extérieur. Sans casse si possible.</p>
             <ul>
               <li>Diagnostic sur place</li>
               <li>Intervention rapide</li>
@@ -101,23 +104,32 @@
 
           <article class="card">
             <h3>Pompage & assainissement</h3>
-            <p>Pompage d’eaux usées, regards, interventions selon besoin. Travail propre et sécurisé.</p>
+            <p>Pompage eaux usées, regards… selon besoin. Travail propre et sécurisé.</p>
             <ul>
-              <li>Matériel professionnel</li>
-              <li>Propreté & respect des lieux</li>
+              <li>Matériel pro</li>
+              <li>Respect des lieux</li>
               <li>Devis avant intervention</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Inspection & diagnostic</h3>
-            <p>Quand ça revient souvent : on aide à identifier la cause (bouchon, défaut, casse…).</p>
+            <p>Quand ça revient : on identifie la cause (bouchon, défaut, casse…).</p>
             <ul>
               <li>Diagnostic précis</li>
               <li>Préconisations claires</li>
-              <li>Gain de temps & d’argent</li>
+              <li>Gain de temps</li>
             </ul>
           </article>
+        </div>
+
+        <!-- CTA téléphone (conversion ++) -->
+        <div class="callout">
+          <div>
+            <strong>Besoin d’une intervention ?</strong><br />
+            Appelle maintenant : <span class="callout__num">06 60 35 69 17</span>
+          </div>
+          <a class="btn btn--call" data-track="call" href="tel:+33660356917">📞 Appeler</a>
         </div>
       </div>
     </section>
@@ -133,12 +145,9 @@
         <div class="zonebox">
           <div class="zonebox__left">
             <div class="zonepill">66</div>
-            <div class="zonetext">
-              <strong>Intervention rapide</strong><br />
-              Déplacement dans le 66 • Urgence 24/7
-            </div>
+            <div class="zonetext"><strong>Urgence</strong> 24/7 • Intervention rapide</div>
           </div>
-          <a class="btn btn--primary" href="tel:+33660356917">Appeler maintenant</a>
+          <a class="btn btn--primary" data-track="call" href="tel:+33660356917">📞 Appeler</a>
         </div>
       </div>
     </section>
@@ -148,54 +157,41 @@
       <div class="container">
         <div class="section__head">
           <h2>Tarifs</h2>
-          <p>On fait simple : on t’annonce le prix avant d’intervenir.</p>
+          <p>On annonce le prix avant d’intervenir (selon urgence / zone / type de bouchon).</p>
         </div>
 
         <div class="tarifs">
-          <div class="tarif">
-            <div class="tarif__title">Déplacement + diagnostic</div>
-            <div class="tarif__text">Selon zone / urgence (jour-nuit)</div>
-          </div>
-          <div class="tarif">
-            <div class="tarif__title">Débouchage</div>
-            <div class="tarif__text">Selon accès et type de bouchon</div>
-          </div>
-          <div class="tarif">
-            <div class="tarif__title">Interventions spécifiques</div>
-            <div class="tarif__text">Sur devis (pompage, inspection, etc.)</div>
-          </div>
-        </div>
-
-        <div class="callout">
-          <div>
-            <strong>Besoin d’un prix tout de suite ?</strong><br />
-            Appelle et dis : ville + problème + urgence ou non.
-          </div>
-          <a class="btn btn--call" href="tel:+33660356917">📞 06 60 35 69 17</a>
+          <div class="tarif"><strong>Déplacement + diagnostic</strong><span>Selon zone / urgence</span></div>
+          <div class="tarif"><strong>Débouchage</strong><span>Selon accès & type</span></div>
+          <div class="tarif"><strong>Cas spécifiques</strong><span>Sur devis</span></div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (form plus bas) -->
     <section id="contact" class="section section--alt">
       <div class="container">
         <div class="section__head">
           <h2>Contact</h2>
-          <p>Le plus rapide : appel direct. Sinon tu peux laisser un message.</p>
+          <p>Le plus rapide : téléphone. Le formulaire est en dessous.</p>
         </div>
 
-        <div class="contactgrid">
-          <div class="contactcard">
-            <h3>Appel direct</h3>
-            <p class="phone">
-              <a href="tel:+33660356917">📞 06 60 35 69 17</a>
-            </p>
-            <p class="small">
-              Disponible 24/7 (urgences). Déplacement dans le 66.
-            </p>
+        <div class="contactPhone">
+          <div>
+            <strong>Appel direct</strong><br />
+            <span class="contactPhone__num">
+              <a data-track="call" href="tel:+33660356917">📞 06 60 35 69 17</a>
+            </span><br />
+            <span class="muted">Urgence 24/7 • Département 66</span>
           </div>
+          <a class="btn btn--primary" data-track="call" href="tel:+33660356917">Appeler</a>
+        </div>
 
-          <form class="form" action="mailto:contact@tondomaine.fr" method="post" enctype="text/plain">
+        <div class="formWrap">
+          <h3 class="formTitle">Ou laisser un message</h3>
+
+          <!-- data-track="form" pour tracking intention -->
+          <form class="form" data-track="form" action="mailto:contact@tondomaine.fr" method="post" enctype="text/plain">
             <label>Nom
               <input name="Nom" autocomplete="name" required />
             </label>
@@ -212,17 +208,22 @@
               <textarea name="Message" rows="5" required></textarea>
             </label>
 
-            <button class="btn btn--primary btn--block" type="submit">Envoyer</button>
+            <button class="btn btn--secondary btn--block" type="submit">Envoyer le message</button>
 
             <p class="formnote">
-              Formulaire “mailto” : ouvre l’email du client. Si tu veux un vrai formulaire (réception automatique),
-              je te le mets gratuitement via Netlify.
+              (Le “mailto” ouvre l’e-mail du client. Pour un vrai formulaire qui arrive direct dans ta boîte,
+              dis-moi et je te le mets.)
             </p>
           </form>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Barre d’appel sticky en bas -->
+  <div class="bottomBar">
+    <a class="bottomBar__btn" data-track="call" href="tel:+33660356917">📞 Appeler 06 60 35 69 17</a>
+  </div>
 
   <footer class="footer">
     <div class="container footer__inner">
@@ -231,15 +232,13 @@
         Débouchage • Assainissement • 66 • 24/7
       </div>
 
-      <div class="footer__right">
-        <a href="tel:+33660356917" class="footer__call">📞 06 60 35 69 17</a>
-        <small>© <span id="year"></span> — Tous droits réservés</small>
+      <div class="footer__links">
+        <a href="./mentions-legales.html">Mentions légales</a>
+        <a href="./cgv.html">CGV</a>
+        <a href="./politique-confidentialite.html">Confidentialité</a>
       </div>
     </div>
   </footer>
-
-  <!-- Bouton flottant mobile -->
-  <a class="floating" href="tel:+33660356917" aria-label="Appeler">📞</a>
 
   <script src="./script.js"></script>
 </body>
