@@ -1,142 +1,82 @@
+// ===== Menu overlay =====
 (function () {
-  // ===== MENU =====
-  const menuBtn = document.getElementById("menuBtn");
-  const menuOverlay = document.getElementById("menuOverlay");
-  const menuClose = document.getElementById("menuClose");
+  const overlay = document.getElementById("menuOverlay");
+  const btn = document.getElementById("menuBtn");
+  const close = document.getElementById("menuClose");
 
   function openMenu() {
-    menuOverlay.classList.add("open");
-    menuOverlay.setAttribute("aria-hidden", "false");
-    menuBtn.setAttribute("aria-expanded", "true");
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    btn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
   }
+
   function closeMenu() {
-    menuOverlay.classList.remove("open");
-    menuOverlay.setAttribute("aria-hidden", "true");
-    menuBtn.setAttribute("aria-expanded", "false");
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    btn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
 
-  if (menuBtn && menuOverlay && menuClose) {
-    menuBtn.addEventListener("click", openMenu);
-    menuClose.addEventListener("click", closeMenu);
+  btn?.addEventListener("click", openMenu);
+  close?.addEventListener("click", closeMenu);
 
-    menuOverlay.addEventListener("click", function (e) {
-      if (e.target === menuOverlay) closeMenu();
-    });
-
-    document.querySelectorAll(".menuLink").forEach(function (a) {
-      a.addEventListener("click", function () {
-        closeMenu();
-      });
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeMenu();
-    });
-  }
-
-  // ===== SCROLL DOUX =====
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      const targetId = a.getAttribute("href");
-      if (!targetId || targetId === "#") return;
-      const el = document.querySelector(targetId);
-      if (!el) return;
-      e.preventDefault();
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  overlay?.addEventListener("click", (e) => {
+    if (e.target === overlay) closeMenu();
   });
 
-  // ===== ZONES -> PREFILL DEVIS =====
-  const zoneCity = document.getElementById("zoneCity");
-  const zoneAddress = document.getElementById("zoneAddress");
-  const zoneStatus = document.getElementById("zoneStatus");
-  const prefillBtn = document.getElementById("prefillBtn");
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("open")) closeMenu();
+  });
 
-  const cityInput = document.getElementById("cityInput");
-  const msgInput = document.getElementById("msgInput");
+  document.querySelectorAll(".menuLink").forEach((a) => {
+    a.addEventListener("click", () => closeMenu());
+  });
+})();
 
-  function updateZoneStatus() {
-    const c = (zoneCity?.value || "").trim();
-    zoneStatus.textContent = `✅ Couverture : 66  Ville : ${c ? c : "—"}`;
-  }
 
-  if (zoneCity) zoneCity.addEventListener("input", updateZoneStatus);
-  updateZoneStatus();
+// ===== Scroll doux (liens #...) =====
+(function () {
+  document.addEventListener("click", function (e) {
+    const a = e.target.closest("a");
+    if (!a) return;
 
-  if (prefillBtn) {
-    prefillBtn.addEventListener("click", function () {
-      const c = (zoneCity?.value || "").trim();
-      const a = (zoneAddress?.value || "").trim();
+    const href = a.getAttribute("href");
+    if (!href || !href.startsWith("#")) return;
 
-      if (c && cityInput) cityInput.value = c;
+    const id = href.slice(1);
+    const el = document.getElementById(id);
+    if (!el) return;
 
-      // On met l'adresse dans le message (pratique)
-      if (msgInput) {
-        const lines = [];
-        lines.push("Demande de devis — Débouchage / urgence");
-        if (c) lines.push("Ville : " + c);
-        if (a) lines.push("Adresse : " + a);
-        lines.push("Problème : ");
-        msgInput.value = lines.join("\n");
-      }
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+})();
 
-      // Aller au formulaire
-      const devis = document.getElementById("devis");
-      if (devis) devis.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }
 
-  // ===== FORMULAIRE SIMPLE =====
+// ===== Formulaire simple =====
+(function () {
   const form = document.getElementById("quickForm");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+  const phone = document.getElementById("phoneInput");
+  const success = document.getElementById("successMsg");
 
-      const phoneInput = document.getElementById("phoneInput");
-      const phone = (phoneInput?.value || "").trim();
+  if (!form) return;
 
-      if (phone.length < 6) {
-        alert("Merci d’indiquer un numéro valide.");
-        phoneInput?.focus();
-        return;
-      }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      const success = document.getElementById("successMsg");
-      if (success) success.style.display = "block";
-    });
-  }
+    const raw = (phone?.value || "").trim();
+    const digits = raw.replace(/\D/g, "");
 
-  // ===== OPTION B : GOOGLE PLACES (quand tu auras ta clé)
-  // Décommente le script Google dans index.html + colle ta clé
-  // Puis décommente ce bloc :
-  /*
-  if (window.google && google.maps && google.maps.places && zoneAddress) {
-    const autocomplete = new google.maps.places.Autocomplete(zoneAddress, {
-      types: ["address"],
-      componentRestrictions: { country: "fr" },
-      fields: ["formatted_address", "address_components"]
-    });
+    if (digits.length < 9) {
+      alert("Merci d’indiquer un numéro valide.");
+      phone?.focus();
+      return;
+    }
 
-    autocomplete.addListener("place_changed", function () {
-      const place = autocomplete.getPlace();
-      if (!place) return;
+    success.style.display = "block";
+    setTimeout(() => { success.style.display = "none"; }, 4500);
 
-      // Remplir adresse formatée
-      if (place.formatted_address) zoneAddress.value = place.formatted_address;
-
-      // Essayer de récupérer la ville
-      const comps = place.address_components || [];
-      const locality = comps.find(c => c.types.includes("locality")) ||
-                       comps.find(c => c.types.includes("postal_town")) ||
-                       comps.find(c => c.types.includes("administrative_area_level_2"));
-
-      if (locality && locality.long_name && zoneCity) {
-        zoneCity.value = locality.long_name;
-        updateZoneStatus();
-      }
-    });
-  }
-  */
+    form.reset();
+  });
 })();
