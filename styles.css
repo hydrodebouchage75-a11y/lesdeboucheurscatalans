@@ -1,127 +1,195 @@
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b1220;
-  color:#fff;
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  box-sizing: border-box;
 }
 
-.container{padding:16px}
-
-.topbar{
-  position:sticky;
-  top:0;
-  background:#0b1220;
-  border-bottom:1px solid #222;
-  z-index:10;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1220;
+  color: #ffffff;
+  line-height: 1.5;
 }
 
-.topbar__inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.brand{
-  display:flex;
-  gap:10px;
-  align-items:center;
+/* =========================
+   HEADER
+========================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0b1220;
+  border-bottom: 1px solid #222;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo-small{
-  width:32px;
-  height:32px;
-  border-radius:8px;
+header strong {
+  font-size: 14px;
 }
 
-.brand-text span{
-  font-size:12px;
-  color:#ccc;
+header span {
+  font-size: 12px;
+  color: #cccccc;
 }
 
-.btn{
-  display:block;
-  padding:14px;
-  margin-top:10px;
-  text-align:center;
-  border-radius:30px;
-  font-weight:bold;
-  text-decoration:none;
+.callTop {
+  background: #d00027;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
-.btn--primary{
-  background:#ffd200;
-  color:#000;
+/* =========================
+   LAYOUT
+========================= */
+section {
+  padding: 16px;
 }
 
-.btn--ghost{
-  border:1px solid #fff;
-  color:#fff;
+.card {
+  background: #121a2a;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 
-.btn--call{
-  background:#d00027;
-  color:#fff;
+/* =========================
+   TEXT
+========================= */
+h1 {
+  font-size: 22px;
+  margin: 0 0 8px;
 }
 
-.heroCard,.card{
-  background:#121a2a;
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:16px;
+h2 {
+  font-size: 18px;
+  margin: 0 0 8px;
 }
 
-.phoneMain{
-  display:block;
-  background:#1c2436;
-  padding:14px;
-  border-radius:12px;
-  margin:10px 0;
-  font-weight:bold;
+.sub {
+  color: #cccccc;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
-.flagbar span{
-  display:inline-block;
-  width:22%;
-  height:6px;
-  background:linear-gradient(to right,#d00027,#ffd200);
-  border-radius:10px;
+/* =========================
+   PHONE & BUTTONS
+========================= */
+.phone {
+  display: block;
+  background: #1c2436;
+  padding: 14px;
+  border-radius: 12px;
+  margin: 12px 0;
+  font-weight: bold;
+  text-align: center;
 }
 
-.zones span{
-  display:inline-block;
-  background:#1a2438;
-  padding:8px 12px;
-  margin:4px;
-  border-radius:20px;
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.sticky{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  display:flex;
+.btnCall {
+  background: #ffd200;
+  color: #000000;
 }
 
-.sticky a{
-  flex:1;
-  padding:16px;
-  text-align:center;
-  font-weight:bold;
+.btnGhost {
+  border: 1px solid #ffffff;
+  color: #ffffff;
 }
 
-.sticky a:first-child{
-  background:#d00027;
-  color:#fff;
+/* =========================
+   FORM
+========================= */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
 }
 
-.sticky a:last-child{
-  background:#ffd200;
-  color:#000;
+textarea {
+  resize: vertical;
+  min-height: 80px;
 }
 
-.success{
-  display:none;
-  color:#4caf50;
-  margin-top:10px;
+/* =========================
+   ZONES
+========================= */
+.zones span {
+  display: inline-block;
+  background: #1a2438;
+  padding: 8px 12px;
+  margin: 4px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* =========================
+   LISTS
+========================= */
+ul {
+  padding-left: 18px;
+  margin: 8px 0;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* =========================
+   STICKY BAR
+========================= */
+.sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 20;
+}
+
+.sticky a {
+  flex: 1;
+  padding: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sticky .call {
+  background: #d00027;
+  color: #ffffff;
+}
+
+.sticky .devis {
+  background: #ffd200;
+  color: #000000;
+}
+
+/* =========================
+   FOOTER SPACER
+========================= */
+footer {
+  height: 80px;
 }
