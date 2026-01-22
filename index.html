@@ -1,267 +1,286 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Débouchage urgence 66 – 24/7</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Débouchage en urgence 66 – 24/7 | Les Déboucheurs Catalans</title>
 
-<style>
-:root{
-  --bg:#0b1220;
-  --card:#151e2f;
-  --soft:#1c2740;
-  --yellow:#ffd633;
-  --red:#d90429;
-  --text:#ffffff;
-  --muted:#b8c0d9;
-}
+  <meta name="description" content="Débouchage en urgence dans tout le département 66. Intervention rapide 24/7. Appelez maintenant." />
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto}
+  <style>
+    :root{
+      --bg:#0b1324;
+      --card:#111a2f;
+      --text:#ffffff;
+      --muted:#b7c0d8;
+      --yellow:#ffd83d;
+      --red:#c8001a;
+    }
 
-body{
-  background:linear-gradient(180deg,#0b1220,#060b16);
-  color:var(--text);
-  padding-bottom:120px;
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:linear-gradient(180deg,#0a1222,#0b1324);
+      color:var(--text);
+    }
 
-/* HEADER */
-header{
-  padding:16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    a{text-decoration:none;color:inherit}
 
-header .title{
-  font-weight:700;
-  font-size:18px;
-}
+    .container{
+      max-width:480px;
+      margin:0 auto;
+      padding:16px;
+    }
 
-header .subtitle{
-  font-size:13px;
-  color:var(--muted);
-}
+    /* HEADER */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 16px;
+    }
+    .brand{
+      font-weight:700;
+      font-size:16px;
+    }
+    .brand span{
+      display:block;
+      font-weight:400;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .btn-header-call{
+      background:var(--red);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+    }
 
-.call-btn{
-  background:var(--red);
-  color:white;
-  padding:12px 18px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:700;
-}
+    /* CARD */
+    .card{
+      background:var(--card);
+      border-radius:22px;
+      padding:20px;
+      margin-bottom:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
 
-/* CARD */
-.card{
-  background:linear-gradient(180deg,var(--card),#10192b);
-  margin:16px;
-  padding:20px;
-  border-radius:24px;
-  box-shadow:0 20px 40px rgba(0,0,0,.4);
-}
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.08);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:10px;
+    }
 
-/* HERO */
-.badge{
-  display:inline-block;
-  padding:6px 14px;
-  background:var(--soft);
-  border-radius:999px;
-  font-size:13px;
-  margin-bottom:12px;
-}
+    h1{
+      font-size:26px;
+      line-height:1.25;
+      margin:8px 0 10px;
+    }
 
-h1{
-  font-size:26px;
-  line-height:1.2;
-  margin-bottom:10px;
-}
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.45;
+    }
 
-.hero p{
-  color:var(--muted);
-  margin-bottom:16px;
-}
+    /* PHONE DISPLAY */
+    .phone-display{
+      background:rgba(255,255,255,.06);
+      border-radius:14px;
+      padding:14px;
+      text-align:center;
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:14px;
+    }
 
-.phone-box{
-  background:var(--soft);
-  border-radius:16px;
-  padding:14px;
-  text-align:center;
-  font-size:22px;
-  font-weight:700;
-  margin-bottom:14px;
-}
+    /* BUTTONS */
+    .btn{
+      width:100%;
+      height:56px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:17px;
+      cursor:pointer;
+    }
 
-.btn-primary{
-  display:block;
-  background:var(--yellow);
-  color:#000;
-  text-align:center;
-  padding:18px;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
-  margin-bottom:12px;
-}
+    .btn-call-main{
+      background:linear-gradient(135deg,#ffd83d,#ffc400);
+      color:#111;
+      box-shadow:0 10px 25px rgba(255,200,0,.35);
+      animation:pulseCall 2.2s infinite;
+      margin-bottom:12px;
+    }
 
-.btn-secondary{
-  display:block;
-  border:2px solid var(--muted);
-  color:white;
-  text-align:center;
-  padding:16px;
-  border-radius:999px;
-  text-decoration:none;
-}
+    @keyframes pulseCall{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.04)}
+      100%{transform:scale(1)}
+    }
 
-/* FORM */
-label{
-  font-size:14px;
-  margin-bottom:6px;
-  display:block;
-}
+    .btn-outline{
+      border:1px solid rgba(255,255,255,.25);
+      color:rgba(255,255,255,.8);
+      background:transparent;
+    }
 
-input,textarea{
-  width:100%;
-  padding:14px;
-  border-radius:14px;
-  border:none;
-  margin-bottom:12px;
-  background:#fff;
-  font-size:16px;
-}
+    /* FORM */
+    input,textarea{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:none;
+      margin-bottom:10px;
+      font-size:15px;
+    }
+    textarea{min-height:80px;resize:none}
 
-textarea{resize:none;height:90px}
+    .small{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:8px;
+    }
 
-small{
-  color:var(--muted);
-  font-size:12px;
-}
+    /* ZONES */
+    .zones input{
+      background:rgba(255,255,255,.08);
+      color:#fff;
+    }
 
-/* ZONES */
-.zone-info{
-  color:var(--muted);
-  margin-bottom:12px;
-}
+    /* AVIS */
+    .review{
+      background:rgba(255,255,255,.05);
+      border-radius:16px;
+      padding:14px;
+      margin-bottom:12px;
+    }
+    .stars{color:#ffd83d;font-size:15px;margin-bottom:6px}
+    .review small{color:var(--muted)}
 
-/* AVIS */
-.review{
-  background:var(--soft);
-  border-radius:18px;
-  padding:14px;
-  margin-bottom:12px;
-}
+    /* STICKY BAR */
+    .sticky{
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      background:#0b1324;
+      padding:10px;
+      display:flex;
+      gap:10px;
+      box-shadow:0 -6px 20px rgba(0,0,0,.5);
+    }
+    .sticky .btn{
+      height:52px;
+      font-size:16px;
+    }
+    .sticky-call{
+      background:var(--red);
+      color:#fff;
+      font-weight:700;
+    }
+    .sticky-devis{
+      background:var(--yellow);
+      color:#111;
+      font-weight:700;
+    }
 
-.stars{color:var(--yellow);margin-bottom:6px}
-
-/* STICKY BAR */
-.sticky{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  display:flex;
-  gap:10px;
-  padding:12px;
-  background:rgba(6,11,22,.95);
-}
-
-.sticky a{
-  flex:1;
-  text-align:center;
-  padding:16px;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
-}
-
-.sticky .call{background:var(--red);color:white}
-.sticky .devis{background:var(--yellow);color:#000}
-</style>
+    footer{height:90px}
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div>
-    <div class="title">Les Déboucheurs Catalans</div>
-    <div class="subtitle">Débouchage • 66 • 24/7</div>
+  <div class="brand">
+    Les Déboucheurs Catalans
+    <span>Débouchage • 66 • 24/7</span>
   </div>
-  <a href="tel:0660356917" class="call-btn">📞 Appeler</a>
+  <a href="tel:0660356917" class="btn-header-call">📞 Appeler</a>
 </header>
 
-<!-- HERO -->
-<section class="card hero">
-  <div class="badge">Urgence 24/7 • Département 66</div>
-  <h1>Débouchage en urgence –<br>Pyrénées-Orientales – 24/7</h1>
-  <p>Intervention rapide dans tout le département 66.</p>
+<div class="container">
 
-  <div class="phone-box">📞 06 60 35 69 17</div>
+  <!-- HERO -->
+  <section class="card">
+    <div class="badge">Urgence 24/7 • Département 66</div>
+    <h1>Débouchage en urgence – Pyrénées-Orientales – 24/7</h1>
+    <p>Intervention rapide dans tout le département 66.</p>
 
-  <a href="tel:0660356917" class="btn-primary">📞 Appeler maintenant</a>
-  <a href="#devis" class="btn-secondary">📩 Devis rapide</a>
-</section>
+    <div class="phone-display">📞 06 60 35 69 17</div>
 
-<!-- DEVIS RAPIDE -->
-<section class="card" id="devis">
-  <h2>📩 Devis rapide / Être rappelé</h2>
-  <p class="zone-info">Laisse ton numéro, on te rappelle rapidement.</p>
+    <a href="tel:0660356917" class="btn btn-call-main">📞 Appeler maintenant</a>
+    <a href="#devis" class="btn btn-outline">📩 Devis rapide</a>
+  </section>
 
-  <label>Téléphone (obligatoire)</label>
-  <input type="tel" placeholder="Ex : 06 60 35 69 17">
+  <!-- DEVIS -->
+  <section id="devis" class="card">
+    <h2>📩 Devis rapide / Être rappelé</h2>
+    <p>Urgence ? Appelez directement. Sinon, laissez votre numéro.</p>
 
-  <label>Ville (optionnel)</label>
-  <input type="text" placeholder="Ex : Perpignan">
+    <form>
+      <input type="tel" placeholder="Téléphone (obligatoire)" required>
+      <input type="text" placeholder="Ville (optionnel)">
+      <textarea placeholder="Message (optionnel)"></textarea>
+      <button class="btn btn-call-main" type="submit">Être rappelé rapidement</button>
+      <a href="tel:0660356917" class="btn btn-outline">📞 Appeler maintenant</a>
+    </form>
 
-  <label>Message (optionnel)</label>
-  <textarea placeholder="WC bouché, urgence, accès…"></textarea>
+    <div class="small">
+      En envoyant, vous acceptez d’être recontacté. Données utilisées uniquement pour répondre.
+    </div>
+  </section>
 
-  <a href="tel:0660356917" class="btn-primary">Être rappelé rapidement</a>
-  <small>En envoyant, vous acceptez d’être recontacté.</small>
-</section>
+  <!-- ZONES -->
+  <section class="card zones">
+    <h2>Zones d’intervention</h2>
+    <p>✅ Toutes les communes du département 66 (Pyrénées-Orientales).</p>
+    <input type="text" placeholder="Votre ville (66) – ex : Perpignan">
+    <input type="text" placeholder="Votre adresse (optionnel)">
+    <div class="small">Si besoin, indiquez l’adresse dans le message.</div>
+  </section>
 
-<!-- ZONES -->
-<section class="card">
-  <h2>Zones d’intervention</h2>
-  <p class="zone-info">✅ Toutes les communes du département 66 (Pyrénées-Orientales).</p>
+  <!-- AVIS -->
+  <section class="card">
+    <h2>Avis clients</h2>
+    <p>Retours fréquents : rapide, propre, efficace.</p>
 
-  <label>Votre ville (66)</label>
-  <input type="text" placeholder="Ex : Perpignan">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      “Arrivé vite, débouchage fait proprement. Explications claires.”
+      <br><small>M. L. — Perpignan</small>
+    </div>
 
-  <label>Votre adresse</label>
-  <input type="text" placeholder="Ex : 10 rue …">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      “Très pro, prix annoncé avant. Intervention nickel.”
+      <br><small>S. R. — Canet</small>
+    </div>
 
-  <a href="#devis" class="btn-primary">Pré-remplir le devis</a>
-</section>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      “Efficace et rapide, bon contact.”
+      <br><small>J. P. — Saint-Cyprien</small>
+    </div>
 
-<!-- AVIS -->
-<section class="card">
-  <h2>Avis clients</h2>
+    <a href="tel:0660356917" class="btn btn-call-main">📞 Appeler maintenant</a>
+  </section>
 
-  <div class="review">
-    <div class="stars">★★★★★</div>
-    “Arrivé vite, débouchage fait proprement. Explications claires.”
-    <small>— M. L., Perpignan</small>
-  </div>
+</div>
 
-  <div class="review">
-    <div class="stars">★★★★★</div>
-    “Très pro, prix annoncé avant. Intervention efficace.”
-    <small>— S. R., Canet</small>
-  </div>
+<footer></footer>
 
-  <div class="review">
-    <div class="stars">★★★★★</div>
-    “Rapide et sérieux. Bon contact.”
-    <small>— J. P., Saint-Cyprien</small>
-  </div>
-
-  <a href="tel:0660356917" class="btn-primary">📞 Appeler maintenant</a>
-</section>
-
-<!-- STICKY -->
+<!-- STICKY CALL BAR -->
 <div class="sticky">
-  <a href="tel:0660356917" class="call">📞 Appel immédiat</a>
-  <a href="#devis" class="devis">📩 Devis</a>
+  <a href="tel:0660356917" class="btn sticky-call">📞 Appel immédiat</a>
+  <a href="#devis" class="btn sticky-devis">📩 Devis</a>
 </div>
 
 </body>
