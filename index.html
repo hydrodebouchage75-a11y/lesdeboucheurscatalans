@@ -2,10 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Débouchage en urgence 24/7 – Pyrénées-Orientales (66)</title>
   <meta name="description" content="Débouchage en urgence 24/7 dans tout le département 66. Intervention rapide. Appelez le 06 60 35 69 17." />
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -21,8 +20,14 @@
     </div>
 
     <div class="topActions">
-      <a class="callTop" href="tel:+33660356917">📞 Appeler</a>
-      <button class="menuBtn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <a class="callTop" href="tel:+33660356917" aria-label="Appeler 06 60 35 69 17">
+        <span class="callIcon">📞</span>
+        <span class="callText">Appeler</span>
+      </a>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+        ☰
+      </button>
     </div>
   </header>
 
@@ -31,7 +36,7 @@
     <div class="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
       <div class="menuHead">
         <div>
-          <strong>Menu</strong>
+          <div class="menuTitle">Menu</div>
           <div class="menuSub">Accès rapide</div>
         </div>
         <button class="menuClose" id="menuClose" aria-label="Fermer le menu">✕</button>
@@ -67,7 +72,9 @@
           Intervention rapide dans tout le département 66 (WC, évier, douche, colonne, regards, extérieur).
         </p>
 
-        <a class="phonePill" href="tel:+33660356917">📞 06 60 35 69 17</a>
+        <a class="phonePill" href="tel:+33660356917" aria-label="Appeler 06 60 35 69 17">
+          <span>📞</span> <span class="phoneText">06 60 35 69 17</span>
+        </a>
 
         <div class="ctaRow">
           <a class="btn btnCall" href="tel:+33660356917">📞 Appeler maintenant</a>
@@ -78,6 +85,7 @@
           <div class="miniItem">✅ Devis annoncé avant</div>
           <div class="miniItem">✅ Intervention rapide</div>
           <div class="miniItem">✅ Travail propre</div>
+          <div class="miniItem">✅ Matériel pro</div>
         </div>
       </div>
     </section>
@@ -87,7 +95,7 @@
       <div class="card">
         <h2>Services & garanties</h2>
         <p class="sub">
-          Le but : résoudre vite, proprement, et te dire clairement le prix avant d’intervenir.
+          Objectif : régler le problème vite, proprement, avec un tarif annoncé avant intervention.
         </p>
 
         <div class="trustGrid">
@@ -103,14 +111,14 @@
 
           <div class="trustItem">
             <div class="trustTitle">Inspection & diagnostic</div>
-            <div class="trustText">Quand ça revient : on identifie la cause + conseils de prévention.</div>
+            <div class="trustText">Quand ça revient : on identifie la cause + conseils simples pour éviter que ça recommence.</div>
           </div>
         </div>
 
         <div class="bullets">
           <div class="bullet">🟡 <strong>Prix clair :</strong> tarif annoncé avant intervention</div>
           <div class="bullet">🧰 <strong>Matériel pro :</strong> résultat durable + respect des lieux</div>
-          <div class="bullet">⏱️ <strong>Réactif :</strong> urgence 24/7 selon disponibilité</div>
+          <div class="bullet">⏱️ <strong>Réactivité :</strong> urgence 24/7 selon disponibilité</div>
           <div class="bullet">📍 <strong>Zone :</strong> tout le département 66</div>
         </div>
 
@@ -122,7 +130,7 @@
     <section class="section" id="zones">
       <div class="card">
         <h2>Zone d’intervention : 66</h2>
-        <p class="sub">Perpignan + tout le département. Exemples :</p>
+        <p class="sub">Intervention dans tout le département. Exemples :</p>
 
         <div class="chips">
           <span class="chip">Perpignan</span>
@@ -139,52 +147,44 @@
       </div>
     </section>
 
-    <!-- AVIS (PLUS RÉALISTES) -->
+    <!-- AVIS (plus naturels) -->
     <section class="section" id="avis">
       <div class="card">
         <h2>Avis clients</h2>
-        <p class="sub">Quelques retours récents (exemples).</p>
+        <p class="sub">Exemples de retours fréquents (rapide, propre, efficace).</p>
 
         <div class="reviews">
 
           <div class="review">
             <div class="reviewTop">
-              <div class="stars">★★★★★</div>
+              <div class="stars" aria-label="5 étoiles">★★★★★</div>
               <div class="who">C. D. — Perpignan</div>
             </div>
-            <div class="reviewText">
-              “Appelé en fin d’après-midi pour un WC bouché, il est venu le soir même. Il m’a expliqué ce qu’il faisait et c’était propre en repartant.”
-            </div>
+            <div class="reviewText">“WC bouché, appelé en fin d’après-midi. Intervention le jour même. Pro, explique bien, et propre en repartant.”</div>
           </div>
 
           <div class="review">
             <div class="reviewTop">
-              <div class="stars">★★★★★</div>
-              <div class="who">N. G. — Argelès-sur-Mer</div>
+              <div class="stars" aria-label="5 étoiles">★★★★★</div>
+              <div class="who">N. G. — Argelès</div>
             </div>
-            <div class="reviewText">
-              “Intervention rapide, tarif annoncé au téléphone avant de venir. Pro, sympa, et surtout ça ne s’est pas rebouché depuis.”
-            </div>
+            <div class="reviewText">“Tarif annoncé avant de venir, arrivé rapidement. Débouchage ok, plus de refoulement depuis. Très correct.”</div>
           </div>
 
           <div class="review">
             <div class="reviewTop">
-              <div class="stars">★★★★★</div>
+              <div class="stars" aria-label="5 étoiles">★★★★★</div>
               <div class="who">M. R. — Saint-Cyprien</div>
             </div>
-            <div class="reviewText">
-              “On avait un évier qui refoulait. Il a trouvé le bouchon assez loin, a débouché sans abîmer. Bons conseils pour éviter que ça revienne.”
-            </div>
+            <div class="reviewText">“Évier qui refoulait, bouchon plus loin que prévu. Il a pris le temps, pas de dégâts, et bons conseils.”</div>
           </div>
 
           <div class="review">
             <div class="reviewTop">
-              <div class="stars">★★★★☆</div>
+              <div class="stars" aria-label="4 étoiles">★★★★☆</div>
               <div class="who">S. P. — Canet</div>
             </div>
-            <div class="reviewText">
-              “Arrivé dans l’heure. Le problème était plus compliqué que prévu mais il a pris le temps. Communication claire, je referai appel si besoin.”
-            </div>
+            <div class="reviewText">“Arrivé dans l’heure. Problème plus compliqué mais communication claire. Je referai appel si besoin.”</div>
           </div>
 
         </div>
@@ -197,7 +197,7 @@
     <section class="section" id="devis">
       <div class="card">
         <h2>📩 Devis rapide / Être rappelé</h2>
-        <p class="sub">Tu peux appeler directement, ou laisser ton numéro : on te rappelle rapidement.</p>
+        <p class="sub">Appelle directement ou laisse ton numéro : on te rappelle rapidement.</p>
 
         <div class="callCard">
           <div class="callCardLeft">
@@ -230,7 +230,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <section class="section">
       <div class="footerNote">
         © Les Déboucheurs Catalans — Débouchage & assainissement — Département 66
@@ -241,7 +240,7 @@
   </main>
 
   <!-- STICKY BULLES -->
-  <div class="sticky">
+  <div class="sticky" role="navigation" aria-label="Actions rapides">
     <a href="tel:+33660356917" class="bubble call">📞 Appel immédiat</a>
     <a href="#devis" class="bubble devis">📩 Devis</a>
   </div>
