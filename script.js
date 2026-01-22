@@ -1,37 +1,12 @@
-(function(){
-  const RECEIVER = "0660356917";
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
 
-  const phone = document.getElementById("phoneInput");
-  const city  = document.getElementById("cityInput");
-  const msg   = document.getElementById("msgInput");
-  const btn   = document.getElementById("smsSendBtn");
-  const ok    = document.getElementById("successMsg");
-
-  function isIOS(){
-    return /iPhone|iPad|iPod/.test(navigator.userAgent);
+  const phone = document.getElementById("phone").value.trim();
+  if(phone.length < 6){
+    alert("Merci d’indiquer un numéro valide.");
+    return;
   }
 
-  btn.addEventListener("click", function(e){
-    e.preventDefault();
-
-    const p = phone.value.trim();
-    if(p.replace(/\D/g,'').length < 9){
-      alert("Merci d’indiquer un numéro valide");
-      phone.focus();
-      return;
-    }
-
-    const text =
-`Demande de rappel – Les Déboucheurs Catalans
-Téléphone : ${p}
-Ville : ${city.value || "-"}
-Message : ${msg.value || "-"}`;
-
-    const url = `sms:${RECEIVER}${isIOS() ? "&" : "?"}body=` + encodeURIComponent(text);
-
-    ok.style.display="block";
-    ok.textContent="Ouverture de l’application Messages…";
-
-    window.location.href = url;
-  });
-})();
+  alert("Message envoyé. Nous vous rappelons rapidement.");
+  this.reset();
+});
