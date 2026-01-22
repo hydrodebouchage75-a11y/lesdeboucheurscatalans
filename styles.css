@@ -242,22 +242,6 @@ a, a:visited, a:hover, a:active {
 .btnCall{ background: var(--yellow); color:#000 !important; }
 .btnGhost{ border:1px solid rgba(255,255,255,.65); background: transparent; color:#fff !important; }
 
-.miniGrid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:10px;
-  margin-top:12px;
-}
-
-.miniItem{
-  padding:12px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  font-size:13px;
-  color:#e9eefc;
-}
-
 /* ✅ CARTE ZONE 66 */
 .mapCard{
   margin-top: 10px;
@@ -490,7 +474,6 @@ textarea{ min-height:90px; resize:vertical; }
 
 .spacer{ height: 40px; }
 
-/* petit ajustement mobile très étroit */
 @media (max-width: 360px){
   .mapCard{ flex-direction: column; }
   .mapLeft{ flex: 0 0 auto; }
