@@ -1,5 +1,4 @@
 (function () {
-  // ===== MENU OVERLAY =====
   const menuBtn = document.getElementById("menuBtn");
   const menuOverlay = document.getElementById("menuOverlay");
   const menuClose = document.getElementById("menuClose");
@@ -37,30 +36,30 @@
     });
   }
 
-  // ===== SCROLL DOUX =====
+  // Scroll doux vers #ancres
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
       const targetId = a.getAttribute("href");
       if (!targetId || targetId === "#") return;
-
       const el = document.querySelector(targetId);
       if (!el) return;
-
       e.preventDefault();
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
-  // ===== FORMULAIRE SIMPLE =====
+  // Formulaire simple
   const form = document.getElementById("quickForm");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const phone = (document.getElementById("phoneInput")?.value || "").trim();
+      const phoneInput = document.getElementById("phoneInput");
+      const phone = (phoneInput?.value || "").trim();
+
       if (phone.length < 6) {
         alert("Merci d’indiquer un numéro valide.");
-        document.getElementById("phoneInput")?.focus();
+        phoneInput?.focus();
         return;
       }
 
