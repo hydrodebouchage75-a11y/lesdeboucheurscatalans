@@ -12,20 +12,18 @@ document.addEventListener("click", function(e){
   if(!a) return;
 
   if(a.href && a.href.startsWith("tel:")){
-    track("call_click", { phone: "000000000" });
+    track("call_click", { phone: "0660356917" });
   }
 });
 
-// Formulaire (sécurisé)
+// Formulaire
 const form = document.getElementById("quickForm");
 
 if(form){
   form.addEventListener("submit", function(e){
     e.preventDefault();
 
-    const phoneInput = document.getElementById("phone");
-    const phone = phoneInput ? phoneInput.value.trim() : "";
-
+    const phone = document.getElementById("phone").value.trim();
     if(phone.length < 6){
       alert("Merci d’indiquer un numéro valide");
       return;
@@ -33,9 +31,6 @@ if(form){
 
     track("form_submit", { phone });
 
-    const success = document.getElementById("successMsg");
-    if(success){
-      success.style.display = "block";
-    }
+    document.getElementById("successMsg").style.display = "block";
   });
 }
