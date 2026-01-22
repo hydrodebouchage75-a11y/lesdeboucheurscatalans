@@ -5,112 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Débouchage urgence 24/7 – Pyrénées-Orientales</title>
-<meta name="description" content="Débouchage en urgence 24/7 dans tout le département 66. Intervention rapide.">
+<meta name="description" content="Débouchage en urgence 24/7 dans tout le département 66. Intervention rapide. Appelez le 06 60 35 69 17.">
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b1220;
-  color:#fff;
-}
-
-header{
-  position:sticky;
-  top:0;
-  background:#0b1220;
-  border-bottom:1px solid #222;
-  padding:12px 16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:10;
-}
-
-header strong{font-size:14px}
-header span{font-size:12px;color:#ccc}
-
-.callTop{
-  background:#d00027;
-  color:#fff;
-  padding:10px 16px;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-section{
-  padding:16px;
-}
-
-.card{
-  background:#121a2a;
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:16px;
-}
-
-h1{font-size:22px;margin:0 0 8px}
-h2{font-size:18px;margin:0 0 8px}
-
-.sub{color:#ccc;font-size:14px}
-
-.phone{
-  display:block;
-  background:#1c2436;
-  padding:14px;
-  border-radius:12px;
-  margin:12px 0;
-  font-weight:bold;
-  text-align:center;
-  text-decoration:none;
-  color:#fff;
-}
-
-.btn{
-  display:block;
-  text-align:center;
-  padding:14px;
-  border-radius:30px;
-  font-weight:bold;
-  text-decoration:none;
-  margin-top:10px;
-}
-
-.btnCall{background:#ffd200;color:#000}
-.btnGhost{border:1px solid #fff;color:#fff}
-
-.zones span{
-  display:inline-block;
-  background:#1a2438;
-  padding:8px 12px;
-  margin:4px;
-  border-radius:20px;
-}
-
-ul{padding-left:18px}
-
-.sticky{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  display:flex;
-}
-
-.sticky a{
-  flex:1;
-  padding:16px;
-  text-align:center;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-.sticky .call{background:#d00027;color:#fff}
-.sticky .devis{background:#ffd200;color:#000}
-
-footer{height:80px}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -120,37 +17,58 @@ footer{height:80px}
     <strong>Les Déboucheurs Catalans</strong><br>
     <span>Débouchage • 66 • 24/7</span>
   </div>
-  <a href="tel:000000000" class="callTop">📞 Appeler</a>
+  <a href="tel:+33660356917" class="callTop">📞 Appeler</a>
 </header>
 
-<!-- 1 HERO -->
+<main>
+
+<!-- HERO -->
 <section>
   <div class="card">
     <h1>Débouchage en urgence – Pyrénées-Orientales – 24/7</h1>
     <p class="sub">Intervention rapide dans tout le département 66</p>
 
-    <a href="tel:000000000" class="phone">📞 00 00 00 00 00</a>
+    <a href="tel:+33660356917" class="phone" data-track="call">
+      📞 06 60 35 69 17
+    </a>
 
-    <a href="tel:000000000" class="btn btnCall">📞 Appeler maintenant</a>
-    <a href="#devis" class="btn btnGhost">📩 Devis rapide</a>
+    <a href="tel:+33660356917" class="btn btnCall" data-track="call">
+      📞 Appeler maintenant
+    </a>
+
+    <a href="#devis" class="btn btnGhost">
+      📩 Devis rapide
+    </a>
   </div>
 </section>
 
-<!-- 2 FORM -->
+<!-- FORM -->
 <section id="devis">
   <div class="card">
     <h2>📩 Devis rapide / Être rappelé</h2>
+    <p class="sub">Laisse ton numéro, on te rappelle rapidement.</p>
 
-    <input placeholder="Téléphone (obligatoire)" style="width:100%;padding:12px;border-radius:10px;margin-bottom:8px">
-    <input placeholder="Ville (optionnel)" style="width:100%;padding:12px;border-radius:10px;margin-bottom:8px">
-    <textarea placeholder="Message (optionnel)" style="width:100%;padding:12px;border-radius:10px"></textarea>
+    <form id="quickForm">
+      <input id="phone" type="tel" placeholder="Téléphone (obligatoire)" required>
+      <input id="city" type="text" placeholder="Ville (optionnel)">
+      <textarea id="msg" placeholder="Message (optionnel)"></textarea>
 
-    <a href="#" class="btn btnCall">Être rappelé rapidement</a>
-    <a href="tel:000000000" class="btn btnGhost">📞 Appeler maintenant</a>
+      <button type="submit" class="btn btnCall">
+        Être rappelé rapidement
+      </button>
+
+      <a href="tel:+33660356917" class="btn btnGhost" data-track="call">
+        📞 Appeler maintenant
+      </a>
+
+      <div id="successMsg" class="success">
+        ✅ Merci, nous vous rappelons rapidement.
+      </div>
+    </form>
   </div>
 </section>
 
-<!-- 3 ZONES -->
+<!-- ZONES -->
 <section>
   <div class="card">
     <h2>Zones d’intervention</h2>
@@ -161,7 +79,7 @@ footer{height:80px}
   </div>
 </section>
 
-<!-- 4 AVIS -->
+<!-- AVIS -->
 <section>
   <div class="card">
     <h2>Avis clients</h2>
@@ -171,7 +89,7 @@ footer{height:80px}
   </div>
 </section>
 
-<!-- 5 RASSURANCE -->
+<!-- RASSURANCE -->
 <section>
   <div class="card">
     <h2>Rassurance</h2>
@@ -184,7 +102,7 @@ footer{height:80px}
   </div>
 </section>
 
-<!-- 6 POURQUOI -->
+<!-- POURQUOI -->
 <section>
   <div class="card">
     <h2>Pourquoi nous ?</h2>
@@ -199,10 +117,18 @@ footer{height:80px}
 
 <footer></footer>
 
+</main>
+
+<!-- STICKY BAR EN BULLES -->
 <div class="sticky">
-  <a href="tel:000000000" class="call">📞 Appel immédiat</a>
-  <a href="#devis" class="devis">📩 Devis</a>
+  <a href="tel:+33660356917" class="bubble call" data-track="call">
+    📞 Appel immédiat
+  </a>
+  <a href="#devis" class="bubble devis">
+    📩 Devis
+  </a>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
