@@ -1,4 +1,5 @@
 (function () {
+  // ===== MENU =====
   const menuBtn = document.getElementById("menuBtn");
   const menuOverlay = document.getElementById("menuOverlay");
   const menuClose = document.getElementById("menuClose");
@@ -9,7 +10,6 @@
     menuBtn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
   }
-
   function closeMenu() {
     menuOverlay.classList.remove("open");
     menuOverlay.setAttribute("aria-hidden", "true");
@@ -36,7 +36,7 @@
     });
   }
 
-  // Scroll doux vers #ancres
+  // ===== SCROLL DOUX =====
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
       const targetId = a.getAttribute("href");
@@ -48,7 +48,47 @@
     });
   });
 
-  // Formulaire simple
+  // ===== ZONES -> PREFILL DEVIS =====
+  const zoneCity = document.getElementById("zoneCity");
+  const zoneAddress = document.getElementById("zoneAddress");
+  const zoneStatus = document.getElementById("zoneStatus");
+  const prefillBtn = document.getElementById("prefillBtn");
+
+  const cityInput = document.getElementById("cityInput");
+  const msgInput = document.getElementById("msgInput");
+
+  function updateZoneStatus() {
+    const c = (zoneCity?.value || "").trim();
+    zoneStatus.textContent = `✅ Couverture : 66  Ville : ${c ? c : "—"}`;
+  }
+
+  if (zoneCity) zoneCity.addEventListener("input", updateZoneStatus);
+  updateZoneStatus();
+
+  if (prefillBtn) {
+    prefillBtn.addEventListener("click", function () {
+      const c = (zoneCity?.value || "").trim();
+      const a = (zoneAddress?.value || "").trim();
+
+      if (c && cityInput) cityInput.value = c;
+
+      // On met l'adresse dans le message (pratique)
+      if (msgInput) {
+        const lines = [];
+        lines.push("Demande de devis — Débouchage / urgence");
+        if (c) lines.push("Ville : " + c);
+        if (a) lines.push("Adresse : " + a);
+        lines.push("Problème : ");
+        msgInput.value = lines.join("\n");
+      }
+
+      // Aller au formulaire
+      const devis = document.getElementById("devis");
+      if (devis) devis.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  // ===== FORMULAIRE SIMPLE =====
   const form = document.getElementById("quickForm");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -67,4 +107,36 @@
       if (success) success.style.display = "block";
     });
   }
+
+  // ===== OPTION B : GOOGLE PLACES (quand tu auras ta clé)
+  // Décommente le script Google dans index.html + colle ta clé
+  // Puis décommente ce bloc :
+  /*
+  if (window.google && google.maps && google.maps.places && zoneAddress) {
+    const autocomplete = new google.maps.places.Autocomplete(zoneAddress, {
+      types: ["address"],
+      componentRestrictions: { country: "fr" },
+      fields: ["formatted_address", "address_components"]
+    });
+
+    autocomplete.addListener("place_changed", function () {
+      const place = autocomplete.getPlace();
+      if (!place) return;
+
+      // Remplir adresse formatée
+      if (place.formatted_address) zoneAddress.value = place.formatted_address;
+
+      // Essayer de récupérer la ville
+      const comps = place.address_components || [];
+      const locality = comps.find(c => c.types.includes("locality")) ||
+                       comps.find(c => c.types.includes("postal_town")) ||
+                       comps.find(c => c.types.includes("administrative_area_level_2"));
+
+      if (locality && locality.long_name && zoneCity) {
+        zoneCity.value = locality.long_name;
+        updateZoneStatus();
+      }
+    });
+  }
+  */
 })();
