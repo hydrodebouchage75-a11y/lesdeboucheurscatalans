@@ -54,11 +54,7 @@ a, a:visited, a:hover, a:active {
 
 .brand{ min-width:0; flex: 1 1 auto; }
 
-.brandText{
-  display:flex;
-  flex-direction:column;
-  min-width:0;
-}
+.brandText{ display:flex; flex-direction:column; min-width:0; }
 
 .brandText strong{
   font-size:14px;
@@ -94,6 +90,9 @@ a, a:visited, a:hover, a:active {
   line-height:1;
   min-height:44px;
 }
+
+.callTop .callIcon{ font-size:16px; }
+.callTop .callText{ font-size:14px; }
 
 .menuBtn{
   width:44px;
@@ -134,6 +133,7 @@ a, a:visited, a:hover, a:active {
   gap:12px;
   margin-bottom:10px;
 }
+
 .menuTitle{ font-weight: 900; font-size:16px; }
 .menuSub{ color:var(--muted); font-size:12px; margin-top:2px; }
 
@@ -152,6 +152,7 @@ a, a:visited, a:hover, a:active {
   gap:10px;
   margin: 8px 0 14px;
 }
+
 .menuLink{
   display:block;
   padding:14px;
@@ -167,9 +168,11 @@ a, a:visited, a:hover, a:active {
   background: linear-gradient(180deg, rgba(255,210,0,.12), rgba(255,210,0,.06));
   padding:14px;
 }
+
 .menuCallTitle{ font-weight:900; margin-bottom:6px; }
 .menuCallNumber{ display:inline-block; font-size:18px; font-weight:900; margin:6px 0; }
 .menuCallMeta{ color:var(--muted); font-size:12px; margin-bottom:10px; }
+
 .menuCallBtn{
   display:block;
   text-align:center;
@@ -196,6 +199,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .badgeRow{ margin-bottom:8px; }
+
 .badge{
   display:inline-block;
   padding:8px 10px;
@@ -211,6 +215,7 @@ a, a:visited, a:hover, a:active {
   align-items:center;
   justify-content:center;
   gap:10px;
+  text-align:center;
   padding:14px;
   border-radius:14px;
   background: rgba(255,255,255,.06);
@@ -219,6 +224,8 @@ a, a:visited, a:hover, a:active {
   margin: 12px 0;
   min-height: 48px;
 }
+
+.phoneText{ letter-spacing: 0.3px; }
 
 .ctaRow{ display:flex; flex-direction:column; gap:10px; }
 
@@ -235,60 +242,150 @@ a, a:visited, a:hover, a:active {
 .btnCall{ background: var(--yellow); color:#000 !important; }
 .btnGhost{ border:1px solid rgba(255,255,255,.65); background: transparent; color:#fff !important; }
 
-/* ZONES style (comme ton screenshot) */
-.zoneIntro{
-  margin: 8px 0 14px;
-  color: #e9eefc;
+.miniGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+  margin-top:12px;
 }
-.zoneLine{
-  margin: 6px 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.45;
-}
-.zoneLine strong{ color:#fff; }
 
-.fieldGroup{ margin-top: 10px; }
-
-.fieldLabel{
-  display:block;
-  font-weight:900;
-  margin: 10px 0 6px;
-  color:#e9eefc;
+.miniItem{
+  padding:12px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
   font-size:13px;
+  color:#e9eefc;
 }
 
-input, textarea{
-  width:100%;
-  padding:14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-  color:#fff;
-  outline:none;
-  font-size:14px;
-}
-
-.zoneStatus{
-  margin: 12px 0;
-  font-weight: 900;
-  color: #e9eefc;
-}
-
-.zoneTip{
+/* ✅ CARTE ZONE 66 */
+.mapCard{
   margin-top: 10px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  border-radius:18px;
+  padding:12px;
+  display:flex;
+  gap:12px;
+  align-items:stretch;
+}
+
+.mapLeft{
+  flex: 0 0 46%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.deptMap{
+  width:100%;
+  height:auto;
+  max-width:220px;
+  display:block;
+}
+
+.mapRight{
+  flex: 1 1 auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.mapBadge{
+  display:inline-block;
+  width: fit-content;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,210,0,.18);
+  background: rgba(255,210,0,.10);
+  font-weight:900;
+  font-size:12px;
+}
+
+.mapTitle{
+  font-weight:900;
+  font-size:16px;
+}
+
+.mapText{
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.4;
+  font-size:13px;
+  line-height:1.45;
 }
 
-.dividerSoft{
-  height:1px;
-  background: rgba(255,255,255,.08);
-  margin: 14px 0;
+.mapActions{
+  display:flex;
+  gap:10px;
+  margin-top: 6px;
 }
 
-/* Form */
+.mapActions .btn{
+  min-height: 46px;
+  padding: 12px 12px;
+}
+
+.subtleNote{
+  margin-top: 10px;
+  color: rgba(255,255,255,.78);
+  font-size:12px;
+  line-height:1.45;
+  border:1px dashed rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  padding:10px 12px;
+  border-radius:16px;
+}
+
+/* TRUST */
+.trustGrid{
+  display:grid;
+  gap:10px;
+  margin: 12px 0 10px;
+}
+
+.trustItem{
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  border-radius:16px;
+  padding:12px;
+}
+
+.trustTitle{ font-weight:900; margin-bottom:6px; }
+.trustText{ color: var(--muted); font-size:13px; line-height:1.45; }
+
+.bullets{ display:grid; gap:10px; margin: 12px 0; }
+
+.bullet{
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  border-radius:16px;
+  padding:12px;
+  font-size:13px;
+  color:#e9eefc;
+}
+
+/* REVIEWS */
+.reviews{ display:grid; gap:10px; margin-top:10px; }
+
+.review{
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  border-radius:16px;
+  padding:12px;
+}
+
+.reviewTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:6px;
+}
+
+.stars{ font-weight:900; letter-spacing:1px; }
+.who{ color: var(--muted); font-size:12px; }
+.reviewText{ color:#e9eefc; font-size:13px; line-height:1.45; }
+
+/* FORM + CALL CARD */
 .callCard{
   display:flex;
   gap:12px;
@@ -317,6 +414,27 @@ input, textarea{
   min-height:44px;
 }
 
+.form .fieldLabel{
+  display:block;
+  font-weight:900;
+  margin: 10px 0 6px;
+  color:#e9eefc;
+  font-size:13px;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  color:#fff;
+  outline:none;
+  font-size:14px;
+}
+
+textarea{ min-height:90px; resize:vertical; }
+
 .fineprint{
   margin:10px 0 0;
   color: var(--muted);
@@ -330,28 +448,6 @@ input, textarea{
   color:#4caf50;
   font-weight:900;
 }
-
-/* AVIS */
-.reviews{ display:grid; gap:10px; margin-top:10px; }
-
-.review{
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  border-radius:16px;
-  padding:12px;
-}
-
-.reviewTop{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:10px;
-  margin-bottom:6px;
-}
-
-.stars{ font-weight:900; letter-spacing:1px; }
-.who{ color: var(--muted); font-size:12px; }
-.reviewText{ color:#e9eefc; font-size:13px; line-height:1.45; }
 
 /* FOOTER */
 .footerNote{
@@ -393,3 +489,11 @@ input, textarea{
 .bubble.devis{ background: var(--yellow); color:#000 !important; }
 
 .spacer{ height: 40px; }
+
+/* petit ajustement mobile très étroit */
+@media (max-width: 360px){
+  .mapCard{ flex-direction: column; }
+  .mapLeft{ flex: 0 0 auto; }
+  .deptMap{ max-width: 260px; }
+  .mapActions{ flex-direction: column; }
+}
