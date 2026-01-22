@@ -8,17 +8,35 @@ body{
 .container{padding:16px}
 
 .topbar{
-  position:sticky;top:0;
+  position:sticky;
+  top:0;
   background:#0b1220;
   border-bottom:1px solid #222;
+  z-index:10;
 }
 
 .topbar__inner{
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.brand{display:flex;gap:10px;align-items:center}
-.brand img{width:36px;height:36px;border-radius:8px}
+.brand{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.logo-small{
+  width:32px;
+  height:32px;
+  border-radius:8px;
+}
+
+.brand-text span{
+  font-size:12px;
+  color:#ccc;
+}
 
 .btn{
   display:block;
@@ -27,11 +45,23 @@ body{
   text-align:center;
   border-radius:30px;
   font-weight:bold;
+  text-decoration:none;
 }
 
-.btn--primary{background:#ffd200;color:#000}
-.btn--ghost{border:1px solid #fff}
-.btn--call{background:#d00027}
+.btn--primary{
+  background:#ffd200;
+  color:#000;
+}
+
+.btn--ghost{
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.btn--call{
+  background:#d00027;
+  color:#fff;
+}
 
 .heroCard,.card{
   background:#121a2a;
@@ -42,7 +72,7 @@ body{
 
 .phoneMain{
   display:block;
-  background:#222;
+  background:#1c2436;
   padding:14px;
   border-radius:12px;
   margin:10px 0;
@@ -67,18 +97,31 @@ body{
 
 .sticky{
   position:fixed;
-  bottom:0;left:0;right:0;
+  bottom:0;
+  left:0;
+  right:0;
   display:flex;
-  background:#000;
 }
 
 .sticky a{
   flex:1;
   padding:16px;
   text-align:center;
+  font-weight:bold;
+}
+
+.sticky a:first-child{
+  background:#d00027;
+  color:#fff;
+}
+
+.sticky a:last-child{
   background:#ffd200;
   color:#000;
 }
-.sticky a:first-child{background:#d00027;color:#fff}
 
-.success{display:none;color:#0f0;margin-top:10px}
+.success{
+  display:none;
+  color:#4caf50;
+  margin-top:10px;
+}
