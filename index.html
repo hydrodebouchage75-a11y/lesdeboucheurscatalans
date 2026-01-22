@@ -1,118 +1,162 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Débouchage urgence 66 – 24/7</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Les Déboucheurs Catalans – Débouchage 66 – 24/7</title>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
 <header class="topbar">
   <div>
     <strong>Les Déboucheurs Catalans</strong><br>
-    <span>Débouchage • 66 • 24/7</span>
+    <span class="small">Débouchage • 66 • 24/7</span>
   </div>
-  <a href="tel:0660356917" class="call-btn">📞 Appeler</a>
+  <a href="tel:0660356917" class="btn-call">Appeler</a>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="card hero">
   <span class="badge">Urgence 24/7 • Pyrénées-Orientales (66)</span>
-
   <h1>Débouchage en urgence –<br>Pyrénées-Orientales – 24/7</h1>
-
   <p>
-    Intervention rapide dans tout le département 66  
+    Intervention rapide dans tout le département 66<br>
     (WC, évier, douche, colonne, regards, extérieur).
   </p>
 
-  <a href="tel:0660356917" class="phone-box">📞 06 60 35 69 17</a>
+  <div class="phone-box">
+    <a href="tel:0660356917">📞 06 60 35 69 17</a>
+  </div>
 
-  <a href="tel:0660356917" class="btn-primary">📞 Appeler maintenant</a>
-  <a href="#devis" class="btn-secondary">📩 Devis rapide</a>
+  <a href="tel:0660356917" class="btn primary">📞 Appeler maintenant</a>
+  <a href="#devis" class="btn outline">📩 Devis rapide</a>
 </section>
 
 <!-- DEVIS -->
 <section id="devis" class="card">
   <h2>📩 Devis rapide / Être rappelé</h2>
-  <p>Appelle directement ou laisse ton numéro, on te rappelle rapidement.</p>
+  <p class="muted">Appelle directement ou laisse ton numéro, on te rappelle rapidement.</p>
 
-  <div class="direct-call">
+  <div class="call-direct">
     <div>
       <strong>Appel direct</strong><br>
       06 60 35 69 17<br>
-      <small>Urgence 24/7 • Département 66</small>
+      <span class="small">Urgence 24/7 • Pyrénées-Orientales (66)</span>
     </div>
-    <a href="tel:0660356917" class="call-btn small">Appeler</a>
+    <a href="tel:0660356917" class="btn-call">Appeler</a>
   </div>
 
-  <form id="smsForm">
-    <input id="phoneInput" type="tel" placeholder="Téléphone (obligatoire)" required>
-    <input id="cityInput" type="text" placeholder="Ville (optionnel)">
-    <textarea id="msgInput" placeholder="Message (optionnel)"></textarea>
+  <form id="contactForm">
+    <input type="tel" id="phone" placeholder="Téléphone (obligatoire)" required>
+    <input type="text" id="city" placeholder="Ville (optionnel)">
+    <textarea id="message" placeholder="Message (optionnel)"></textarea>
 
-    <a href="#" id="smsSendBtn" class="btn-primary">Être rappelé rapidement</a>
-    <p id="successMsg" class="success"></p>
+    <button type="submit" class="btn primary">Envoyer</button>
   </form>
+
+  <p class="rgpd">
+    En envoyant ce formulaire, vous acceptez d’être recontacté concernant votre demande.
+  </p>
 </section>
 
 <!-- ZONE -->
 <section class="card">
   <h2>📍 Zone d’intervention : Pyrénées-Orientales (66)</h2>
-  <p>Intervention sur toutes les communes du département.</p>
+  <p>✅ Intervention sur l’ensemble du département 66.</p>
 
-  <div class="zone-badges">
-    <span>Perpignan</span>
-    <span>Canet-en-Roussillon</span>
-    <span>Saint-Cyprien</span>
-    <span>Argelès-sur-Mer</span>
-    <span>Thuir</span>
-    <span>Pia</span>
-    <span>Cabestany</span>
-    <span>Toulouges</span>
+  <div class="zone-box">
+    <svg viewBox="0 0 200 240" class="map">
+      <path d="M80 10 L120 20 L150 60 L145 110 L165 160 L120 220 L60 200 L40 140 L55 80 Z"
+            fill="#2c2f36" stroke="#facc15" stroke-width="4"/>
+      <circle cx="120" cy="40" r="12" fill="#facc15"/>
+      <text x="113" y="45" font-size="12" fill="#000">66</text>
+    </svg>
+
+    <div>
+      <span class="pill">Couverture totale</span>
+      <p class="muted">
+        Côte, arrière-pays, villages.<br>
+        Appel direct = prise en charge rapide selon disponibilité.
+      </p>
+
+      <div class="btn-row">
+        <a href="tel:0660356917" class="btn primary">📞 Appeler</a>
+        <a href="#devis" class="btn outline">📩 Devis</a>
+      </div>
+    </div>
   </div>
+
+  <p class="examples">
+    Exemples : Perpignan, Canet, Saint-Cyprien, Argelès, Thuir, Pia, Cabestany, Toulouges…
+  </p>
 </section>
 
 <!-- AVIS -->
 <section class="card">
   <h2>⭐ Avis clients</h2>
+  <p class="muted">Exemples de retours fréquents (rapidité, propreté, efficacité).</p>
 
   <div class="review">
-    ⭐⭐⭐⭐⭐  
-    <p>“Arrivé dans l’heure. Explications claires et travail soigné. Très pro.”</p>
-    <small>M. L. — Perpignan</small>
+    ★★★★★ — C. D. (Perpignan)<br>
+    “WC bouché, appelé en fin d’après-midi. Intervention le jour même.
+    Explications claires et propre en repartant.”
   </div>
 
   <div class="review">
-    ⭐⭐⭐⭐⭐  
-    <p>“Problème réglé rapidement, tarif annoncé avant intervention.”</p>
-    <small>S. R. — Thuir</small>
+    ★★★★★ — N. G. (Argelès)<br>
+    “Arrivé rapidement, tarif expliqué avant. Débouchage OK,
+    plus aucun souci depuis.”
   </div>
 
   <div class="review">
-    ⭐⭐⭐⭐⭐  
-    <p>“Bon contact, efficace, je recommande sans hésiter.”</p>
-    <small>C. P. — Canet</small>
+    ★★★★★ — M. R. (Saint-Cyprien)<br>
+    “Bouchon plus loin que prévu, il a pris le temps.
+    Pas de dégâts, bons conseils.”
   </div>
+
+  <div class="review">
+    ★★★★★ — S. P. (Canet)<br>
+    “Très réactif et professionnel. Intervention propre,
+    résultat immédiat. Je recommande.”
+  </div>
+
+  <a href="tel:0660356917" class="btn primary">📞 Appeler maintenant</a>
 </section>
 
-<!-- BLOC CONFIANCE -->
+<!-- SERVICES -->
 <section class="card">
-  <h2>🔒 Pourquoi nous faire confiance</h2>
-  <ul>
-    <li>Intervention rapide 24/7</li>
-    <li>Matériel professionnel</li>
-    <li>Respect des lieux</li>
-    <li>Tarifs clairs annoncés avant intervention</li>
-  </ul>
+  <h2>Services & garanties</h2>
+  <p>Objectif : régler le problème vite et proprement.</p>
+
+  <div class="service">
+    <strong>Débouchage canalisation</strong><br>
+    WC, évier, lavabo, douche, baignoire, extérieur.
+  </div>
+
+  <div class="service">
+    <strong>Pompage & assainissement</strong><br>
+    Eaux usées, regards, interventions ciblées.
+  </div>
+
+  <div class="service">
+    <strong>Inspection & diagnostic</strong><br>
+    Identification de la cause + conseils prévention.
+  </div>
+
+  <div class="info">🟡 Transparence : explications claires avant intervention</div>
+  <div class="info">⏱️ Réactivité : urgence 24/7 selon disponibilité</div>
+  <div class="info">📍 Zone : Pyrénées-Orientales (66)</div>
+
+  <a href="tel:0660356917" class="btn primary">📞 Appeler maintenant</a>
 </section>
 
-<!-- STICKY BAR -->
+<!-- STICKY -->
 <div class="sticky">
-  <a href="tel:0660356917" class="sticky-call">📞 Appel immédiat</a>
-  <a href="#devis" class="sticky-devis">📩 Devis</a>
+  <a href="tel:0660356917" class="btn red">📞 Appel immédiat</a>
+  <a href="#devis" class="btn yellow">📩 Devis</a>
 </div>
 
 <script src="script.js"></script>
