@@ -1,189 +1,208 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Débouchage urgence 24/7 – Pyrénées-Orientales</title>
-  <meta name="description" content="Débouchage en urgence 24/7 dans les Pyrénées-Orientales. Intervention rapide dans tout le département 66.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google tag GA4 (à adapter plus tard si besoin) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+<title>Débouchage urgence 24/7 – Pyrénées-Orientales</title>
+<meta name="description" content="Débouchage en urgence 24/7 dans tout le département 66. Intervention rapide.">
 
-  <link rel="stylesheet" href="styles.css">
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0b1220;
+  color:#fff;
+}
+
+header{
+  position:sticky;
+  top:0;
+  background:#0b1220;
+  border-bottom:1px solid #222;
+  padding:12px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+}
+
+header strong{font-size:14px}
+header span{font-size:12px;color:#ccc}
+
+.callTop{
+  background:#d00027;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+section{
+  padding:16px;
+}
+
+.card{
+  background:#121a2a;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:16px;
+}
+
+h1{font-size:22px;margin:0 0 8px}
+h2{font-size:18px;margin:0 0 8px}
+
+.sub{color:#ccc;font-size:14px}
+
+.phone{
+  display:block;
+  background:#1c2436;
+  padding:14px;
+  border-radius:12px;
+  margin:12px 0;
+  font-weight:bold;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+}
+
+.btn{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+.btnCall{background:#ffd200;color:#000}
+.btnGhost{border:1px solid #fff;color:#fff}
+
+.zones span{
+  display:inline-block;
+  background:#1a2438;
+  padding:8px 12px;
+  margin:4px;
+  border-radius:20px;
+}
+
+ul{padding-left:18px}
+
+.sticky{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+}
+
+.sticky a{
+  flex:1;
+  padding:16px;
+  text-align:center;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.sticky .call{background:#d00027;color:#fff}
+.sticky .devis{background:#ffd200;color:#000}
+
+footer{height:80px}
+</style>
 </head>
 
 <body>
 
-<header class="topbar">
-  <div class="container topbar__inner">
-    <div class="brand">
-      <!-- LOGO PETIT -->
-      <img src="logo.png" alt="Les Déboucheurs Catalans" class="logo-small" onerror="this.style.display='none'">
-      <div class="brand-text">
-        <strong>Les Déboucheurs Catalans</strong>
-        <span>Débouchage • Assainissement • 66</span>
-      </div>
-    </div>
-
-    <a href="tel:000000000" class="btn btn--call" data-track="call">📞 Appeler</a>
+<header>
+  <div>
+    <strong>Les Déboucheurs Catalans</strong><br>
+    <span>Débouchage • 66 • 24/7</span>
   </div>
+  <a href="tel:000000000" class="callTop">📞 Appeler</a>
 </header>
 
-<main>
-
-<!-- 1️⃣ HERO -->
-<section class="hero">
-  <div class="container heroCard">
-    <div class="flagbar">
-      <span></span><span></span><span></span><span></span>
-    </div>
-
-    <div class="badge">Urgence 24/7 • Département 66</div>
-
+<!-- 1 HERO -->
+<section>
+  <div class="card">
     <h1>Débouchage en urgence – Pyrénées-Orientales – 24/7</h1>
+    <p class="sub">Intervention rapide dans tout le département 66</p>
 
-    <p class="sub">
-      Intervention rapide dans tout le département des Pyrénées-Orientales.
-    </p>
+    <a href="tel:000000000" class="phone">📞 00 00 00 00 00</a>
 
-    <a href="tel:000000000" class="phoneMain" data-track="call">
-      📞 00 00 00 00 00
-    </a>
-
-    <div class="ctaRow">
-      <a href="tel:000000000" class="btn btn--primary" data-track="call">📞 Appeler maintenant</a>
-      <a href="#devis" class="btn btn--ghost">📩 Devis rapide</a>
-    </div>
+    <a href="tel:000000000" class="btn btnCall">📞 Appeler maintenant</a>
+    <a href="#devis" class="btn btnGhost">📩 Devis rapide</a>
   </div>
 </section>
 
-<!-- 2️⃣ FORMULAIRE -->
-<section id="devis" class="section">
-  <div class="container">
+<!-- 2 FORM -->
+<section id="devis">
+  <div class="card">
     <h2>📩 Devis rapide / Être rappelé</h2>
-    <p>Laisse ton numéro, on te rappelle rapidement.</p>
 
-    <form id="quickForm" class="card">
-      <label>Téléphone (obligatoire)</label>
-      <input id="phone" type="tel" placeholder="Ex : 00 00 00 00 00" required>
+    <input placeholder="Téléphone (obligatoire)" style="width:100%;padding:12px;border-radius:10px;margin-bottom:8px">
+    <input placeholder="Ville (optionnel)" style="width:100%;padding:12px;border-radius:10px;margin-bottom:8px">
+    <textarea placeholder="Message (optionnel)" style="width:100%;padding:12px;border-radius:10px"></textarea>
 
-      <label>Ville (optionnel)</label>
-      <input id="city" type="text" placeholder="Ex : Perpignan">
-
-      <label>Message (optionnel)</label>
-      <textarea id="msg" placeholder="WC bouché, urgence, accès…"></textarea>
-
-      <button type="submit" class="btn btn--primary">
-        Être rappelé rapidement
-      </button>
-
-      <a href="tel:000000000" class="btn btn--ghost" data-track="call">
-        📞 Appeler maintenant
-      </a>
-
-      <p class="fineprint">
-        En envoyant, vous acceptez d’être recontacté. Données utilisées uniquement pour vous répondre.
-      </p>
-
-      <div id="successMsg" class="success">
-        ✅ Merci, nous vous rappelons rapidement.
-      </div>
-    </form>
+    <a href="#" class="btn btnCall">Être rappelé rapidement</a>
+    <a href="tel:000000000" class="btn btnGhost">📞 Appeler maintenant</a>
   </div>
 </section>
 
-<!-- 3️⃣ ZONES -->
-<section class="section">
-  <div class="container">
+<!-- 3 ZONES -->
+<section>
+  <div class="card">
     <h2>Zones d’intervention</h2>
-    <p>Département des Pyrénées-Orientales (66)</p>
-
-    <div class="card">
-      <div class="zones">
-        <span>Perpignan</span>
-        <span>Canet-en-Roussillon</span>
-        <span>Saint-Cyprien</span>
-        <span>Argelès-sur-Mer</span>
-        <span>Céret</span>
-        <span>Thuir</span>
-        <span>Pia</span>
-        <span>Prades</span>
-      </div>
-
-      <a href="tel:000000000" class="btn btn--primary" data-track="call">
-        📞 Appel immédiat
-      </a>
+    <div class="zones">
+      <span>Perpignan</span><span>Canet</span><span>Saint-Cyprien</span>
+      <span>Argelès</span><span>Thuir</span><span>Pia</span>
     </div>
   </div>
 </section>
 
-<!-- 4️⃣ AVIS -->
-<section class="section">
-  <div class="container">
+<!-- 4 AVIS -->
+<section>
+  <div class="card">
     <h2>Avis clients</h2>
-
-    <div class="card">
-      <p>★★★★★ Intervention rapide et efficace</p>
-      <p>★★★★★ Très professionnel</p>
-      <p>★★★★★ Travail propre et soigné</p>
-
-      <a href="tel:000000000" class="btn btn--call" data-track="call">
-        📞 Appeler maintenant
-      </a>
-    </div>
+    <p>★★★★★ Intervention rapide</p>
+    <p>★★★★★ Très professionnel</p>
+    <p>★★★★★ Efficace</p>
   </div>
 </section>
 
-<!-- 5️⃣ RASSURANCE -->
-<section class="section">
-  <div class="container">
+<!-- 5 RASSURANCE -->
+<section>
+  <div class="card">
     <h2>Rassurance</h2>
-
-    <div class="card">
-      <ul>
-        <li>✅ Devis avant intervention</li>
-        <li>🧰 Matériel professionnel</li>
-        <li>🕒 Urgence 24/7</li>
-        <li>📍 Intervention dans tout le 66</li>
-      </ul>
-    </div>
+    <ul>
+      <li>Devis avant intervention</li>
+      <li>Matériel professionnel</li>
+      <li>Urgence 24/7</li>
+      <li>Département 66</li>
+    </ul>
   </div>
 </section>
 
-<!-- 6️⃣ POURQUOI NOUS -->
-<section class="section">
-  <div class="container">
+<!-- 6 POURQUOI -->
+<section>
+  <div class="card">
     <h2>Pourquoi nous ?</h2>
-
-    <div class="card">
-      <ul>
-        <li>Intervention rapide</li>
-        <li>Service clair et rassurant</li>
-        <li>Techniciens expérimentés</li>
-        <li>Disponible 24/7</li>
-      </ul>
-
-      <a href="tel:000000000" class="btn btn--call" data-track="call">
-        📞 Appeler maintenant
-      </a>
-    </div>
+    <ul>
+      <li>Rapide</li>
+      <li>Propre</li>
+      <li>Efficace</li>
+      <li>Disponible 24/7</li>
+    </ul>
   </div>
 </section>
 
-</main>
+<footer></footer>
 
-<!-- STICKY BAR -->
 <div class="sticky">
-  <a href="tel:000000000" data-track="call">📞 Appel immédiat</a>
-  <a href="#devis">📩 Devis</a>
+  <a href="tel:000000000" class="call">📞 Appel immédiat</a>
+  <a href="#devis" class="devis">📩 Devis</a>
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
