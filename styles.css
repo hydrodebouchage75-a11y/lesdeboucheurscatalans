@@ -237,12 +237,13 @@ a, a:visited, a:hover, a:active {
   border-radius:999px;
   font-weight:900;
   min-height: 50px;
+  border: none;
 }
 
 .btnCall{ background: var(--yellow); color:#000 !important; }
 .btnGhost{ border:1px solid rgba(255,255,255,.65); background: transparent; color:#fff !important; }
 
-/* ✅ CARTE ZONE 66 (affichage amélioré) */
+/* ZONE MAP */
 .mapCard{
   margin-top: 10px;
   border:1px solid rgba(255,255,255,.10);
@@ -290,10 +291,7 @@ a, a:visited, a:hover, a:active {
   font-size:12px;
 }
 
-.mapTitle{
-  font-weight:900;
-  font-size:16px;
-}
+.mapTitle{ font-weight:900; font-size:16px; }
 
 .mapText{
   color: var(--muted);
