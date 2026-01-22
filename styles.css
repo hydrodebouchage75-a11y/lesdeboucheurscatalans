@@ -242,29 +242,33 @@ a, a:visited, a:hover, a:active {
 .btnCall{ background: var(--yellow); color:#000 !important; }
 .btnGhost{ border:1px solid rgba(255,255,255,.65); background: transparent; color:#fff !important; }
 
-/* ✅ CARTE ZONE 66 */
+/* ✅ CARTE ZONE 66 (affichage amélioré) */
 .mapCard{
   margin-top: 10px;
   border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   border-radius:18px;
-  padding:12px;
+  padding:14px;
   display:flex;
-  gap:12px;
-  align-items:stretch;
+  gap:14px;
+  align-items:center;
 }
 
 .mapLeft{
-  flex: 0 0 46%;
+  flex: 0 0 44%;
   display:flex;
   align-items:center;
   justify-content:center;
+  padding: 8px;
+  border-radius:16px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
 }
 
 .deptMap{
-  width:100%;
-  height:auto;
-  max-width:220px;
+  width: 100%;
+  height: auto;
+  max-width: 260px;
   display:block;
 }
 
@@ -474,9 +478,9 @@ textarea{ min-height:90px; resize:vertical; }
 
 .spacer{ height: 40px; }
 
-@media (max-width: 360px){
-  .mapCard{ flex-direction: column; }
+@media (max-width: 380px){
+  .mapCard{ flex-direction: column; align-items: stretch; }
   .mapLeft{ flex: 0 0 auto; }
-  .deptMap{ max-width: 260px; }
+  .deptMap{ max-width: 320px; margin: 0 auto; }
   .mapActions{ flex-direction: column; }
 }
