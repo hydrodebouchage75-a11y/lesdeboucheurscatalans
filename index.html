@@ -79,12 +79,7 @@
           <a class="btn btnGhost" href="#devis">📩 Devis rapide</a>
         </div>
 
-        <div class="miniGrid">
-          <div class="miniItem">✅ Devis annoncé avant</div>
-          <div class="miniItem">✅ Intervention rapide</div>
-          <div class="miniItem">✅ Travail propre</div>
-          <div class="miniItem">✅ Matériel pro</div>
-        </div>
+        <!-- ✅ SUPPRIMÉ : bloc miniGrid (les 4 lignes avec ✅) -->
       </div>
     </section>
 
@@ -125,7 +120,7 @@
       </div>
     </section>
 
-    <!-- ZONES (avec carte 66 surbrillance) -->
+    <!-- ZONES (carte 66 surbrillance) -->
     <section class="section" id="zones">
       <div class="card">
         <h2>Zone d’intervention : Département 66</h2>
@@ -135,15 +130,12 @@
 
         <div class="mapCard" aria-label="Carte du département 66 en surbrillance">
           <div class="mapLeft">
-            <!-- SVG léger (pas d’API) -->
             <svg class="deptMap" viewBox="0 0 240 240" role="img" aria-label="Pyrénées-Orientales (66) en surbrillance">
-              <!-- fond -->
               <defs>
                 <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0" stop-color="rgba(255,255,255,.08)"/>
                   <stop offset="1" stop-color="rgba(255,255,255,.03)"/>
                 </linearGradient>
-
                 <linearGradient id="catGrad" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0" stop-color="#d00027"/>
                   <stop offset="1" stop-color="#ffd200"/>
@@ -152,7 +144,7 @@
 
               <rect x="10" y="10" width="220" height="220" rx="22" fill="url(#bgGrad)" stroke="rgba(255,255,255,.10)"/>
 
-              <!-- Forme stylisée du 66 (silhouette approximative, esthétique, pas géographique exacte) -->
+              <!-- Forme stylisée (visuel) -->
               <path
                 d="M128 48
                    L154 58
@@ -175,7 +167,6 @@
                 stroke-linejoin="round"
               />
 
-              <!-- halo -->
               <path
                 d="M128 48
                    L154 58
@@ -199,13 +190,11 @@
                 opacity=".35"
               />
 
-              <!-- badge 66 -->
               <g>
                 <circle cx="165" cy="70" r="22" fill="#0b1220" stroke="rgba(255,255,255,.18)" />
                 <text x="165" y="78" text-anchor="middle" font-size="18" font-weight="900" fill="#ffd200">66</text>
               </g>
 
-              <!-- label -->
               <text x="120" y="220" text-anchor="middle" font-size="12" fill="rgba(255,255,255,.75)">
                 Pyrénées-Orientales
               </text>
@@ -216,7 +205,7 @@
             <div class="mapBadge">✅ Couverture totale</div>
             <div class="mapTitle">On intervient partout dans le 66</div>
             <div class="mapText">
-              Perpignan, côte, arrière-pays, villages…<br>
+              Côte, arrière-pays, villages…<br>
               <strong>Appel direct</strong> = intervention rapide selon disponibilité.
             </div>
 
@@ -228,7 +217,7 @@
         </div>
 
         <div class="subtleNote">
-          Exemples de zones : Perpignan, Canet, Saint-Cyprien, Argelès, Thuir, Pia, Cabestany, Toulouges…
+          Exemples : Perpignan, Canet, Saint-Cyprien, Argelès, Thuir, Pia, Cabestany, Toulouges…
           (mais la couverture est <strong>tout le département</strong>).
         </div>
       </div>
@@ -270,7 +259,7 @@
               <div class="stars" aria-label="4 étoiles">★★★★☆</div>
               <div class="who">S. P. — Canet</div>
             </div>
-            <div class="reviewText">“Intervention rapide, travail soigné et conseils utiles. Très satisfait du service.”</div>
+            <div class="reviewText">“Arrivé dans l’heure. Problème plus compliqué mais communication claire. Je referai appel si besoin.”</div>
           </div>
         </div>
 
