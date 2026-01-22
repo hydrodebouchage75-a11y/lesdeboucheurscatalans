@@ -7,16 +7,26 @@
   --line:rgba(255,255,255,.10);
   --red:#d00027;
   --yellow:#ffd200;
+  --white:#ffffff;
 }
+
+html, body { height: 100%; }
 
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   background: var(--bg);
-  color:#fff;
+  color:var(--white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding-bottom: calc(92px + env(safe-area-inset-bottom)); /* évite que la sticky bouffe le contenu */
 }
 
-a{ color:inherit; text-decoration:none; }
+/* ✅ stop styles iOS par défaut (bleu/violet souligné) */
+a, a:visited, a:hover, a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
 
 .section{ padding:16px; }
 
@@ -25,9 +35,10 @@ a{ color:inherit; text-decoration:none; }
   border-radius:18px;
   padding:16px;
   box-shadow: 0 12px 28px rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,.06);
 }
 
-/* TOPBAR */
+/* ================= HEADER ================= */
 .topbar{
   position: sticky;
   top:0;
@@ -35,17 +46,16 @@ a{ color:inherit; text-decoration:none; }
   background: rgba(11,18,32,.92);
   backdrop-filter: blur(10px);
   border-bottom:1px solid var(--line);
-  padding:12px 14px;
+  padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:12px;
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  max-width:70%;
+  min-width:0;
+  flex: 1 1 auto;
 }
 
 .brandText{
@@ -53,31 +63,44 @@ a{ color:inherit; text-decoration:none; }
   flex-direction:column;
   min-width:0;
 }
+
 .brandText strong{
-  font-size:13px;
+  font-size:14px;
+  font-weight: 900;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
 }
+
 .brandText span{
   font-size:12px;
   color: var(--muted);
+  margin-top:2px;
 }
 
 .topActions{
   display:flex;
   align-items:center;
   gap:10px;
-  flex:0 0 auto;
+  flex: 0 0 auto;
 }
 
 .callTop{
+  display:flex;
+  align-items:center;
+  gap:8px;
   background: var(--red);
-  color:#fff;
-  padding:10px 14px;
+  color:#fff !important;
+  padding:12px 14px;
   border-radius:999px;
-  font-weight:700;
+  font-weight:900;
+  white-space:nowrap;
+  line-height:1;
+  min-height:44px;
 }
+
+.callTop .callIcon{ font-size:16px; }
+.callTop .callText{ font-size:14px; }
 
 .menuBtn{
   width:44px;
@@ -89,7 +112,7 @@ a{ color:inherit; text-decoration:none; }
   font-size:18px;
 }
 
-/* MENU OVERLAY */
+/* ================= MENU OVERLAY ================= */
 .menuOverlay{
   position:fixed;
   inset:0;
@@ -97,6 +120,7 @@ a{ color:inherit; text-decoration:none; }
   z-index:80;
   display:none;
 }
+
 .menuOverlay.open{ display:block; }
 
 .menuPanel{
@@ -105,7 +129,7 @@ a{ color:inherit; text-decoration:none; }
   left:12px;
   right:12px;
   background: #0f172a;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   border-radius:18px;
   padding:14px;
   box-shadow: 0 18px 50px rgba(0,0,0,.45);
@@ -118,6 +142,8 @@ a{ color:inherit; text-decoration:none; }
   gap:12px;
   margin-bottom:10px;
 }
+
+.menuTitle{ font-weight: 900; font-size:16px; }
 .menuSub{ color:var(--muted); font-size:12px; margin-top:2px; }
 
 .menuClose{
@@ -135,12 +161,14 @@ a{ color:inherit; text-decoration:none; }
   gap:10px;
   margin: 8px 0 14px;
 }
+
 .menuLink{
-  padding:14px 14px;
+  display:block;
+  padding:14px;
   border-radius:16px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
-  font-weight:700;
+  font-weight:900;
 }
 
 .menuCallCard{
@@ -149,32 +177,38 @@ a{ color:inherit; text-decoration:none; }
   background: linear-gradient(180deg, rgba(255,210,0,.12), rgba(255,210,0,.06));
   padding:14px;
 }
-.menuCallTitle{ font-weight:800; margin-bottom:6px; }
+
+.menuCallTitle{ font-weight:900; margin-bottom:6px; }
 .menuCallNumber{ display:inline-block; font-size:18px; font-weight:900; margin:6px 0; }
 .menuCallMeta{ color:var(--muted); font-size:12px; margin-bottom:10px; }
+
 .menuCallBtn{
   display:block;
   text-align:center;
   padding:14px;
   border-radius:999px;
   background: var(--yellow);
-  color:#000;
+  color:#000 !important;
   font-weight:900;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero h1{
   font-size:22px;
   margin:10px 0 8px;
   line-height:1.15;
+  letter-spacing: -0.2px;
 }
+
 .sub{
   margin:0 0 12px;
   color: var(--muted);
   font-size:14px;
   line-height:1.45;
 }
+
 .badgeRow{ margin-bottom:8px; }
+
 .badge{
   display:inline-block;
   padding:8px 10px;
@@ -186,7 +220,10 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .phonePill{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
   text-align:center;
   padding:14px;
   border-radius:14px;
@@ -194,19 +231,25 @@ a{ color:inherit; text-decoration:none; }
   border:1px solid var(--line);
   font-weight:900;
   margin: 12px 0;
+  min-height: 48px;
 }
 
+.phoneText{ letter-spacing: 0.3px; }
+
 .ctaRow{ display:flex; flex-direction:column; gap:10px; }
+
 .btn{
   display:block;
   width:100%;
   text-align:center;
-  padding:14px;
+  padding:15px 14px;
   border-radius:999px;
   font-weight:900;
+  min-height: 50px;
 }
-.btnCall{ background: var(--yellow); color:#000; }
-.btnGhost{ border:1px solid rgba(255,255,255,.65); background: transparent; color:#fff; }
+
+.btnCall{ background: var(--yellow); color:#000 !important; }
+.btnGhost{ border:1px solid rgba(255,255,255,.65); background: transparent; color:#fff !important; }
 
 .miniGrid{
   display:grid;
@@ -214,33 +257,37 @@ a{ color:inherit; text-decoration:none; }
   gap:10px;
   margin-top:12px;
 }
+
 .miniItem{
   padding:12px;
   border-radius:16px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   font-size:13px;
   color:#e9eefc;
 }
 
-/* TRUST */
+/* ================= TRUST ================= */
 .trustGrid{
   display:grid;
   gap:10px;
   margin: 12px 0 10px;
 }
+
 .trustItem{
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   border-radius:16px;
   padding:12px;
 }
+
 .trustTitle{ font-weight:900; margin-bottom:6px; }
 .trustText{ color: var(--muted); font-size:13px; line-height:1.45; }
 
 .bullets{ display:grid; gap:10px; margin: 12px 0; }
+
 .bullet{
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   border-radius:16px;
   padding:12px;
@@ -248,24 +295,27 @@ a{ color:inherit; text-decoration:none; }
   color:#e9eefc;
 }
 
-/* ZONES */
+/* ================= ZONES ================= */
 .chips{ display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 2px; }
+
 .chip{
   padding:10px 12px;
   border-radius:999px;
   background: rgba(255,255,255,.06);
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   font-size:13px;
 }
 
-/* REVIEWS */
+/* ================= REVIEWS ================= */
 .reviews{ display:grid; gap:10px; margin-top:10px; }
+
 .review{
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   border-radius:16px;
   padding:12px;
 }
+
 .reviewTop{
   display:flex;
   justify-content:space-between;
@@ -273,53 +323,59 @@ a{ color:inherit; text-decoration:none; }
   gap:10px;
   margin-bottom:6px;
 }
+
 .stars{ font-weight:900; letter-spacing:1px; }
 .who{ color: var(--muted); font-size:12px; }
 .reviewText{ color:#e9eefc; font-size:13px; line-height:1.45; }
 
-/* FORM + CALL CARD */
+/* ================= FORM + CALL CARD ================= */
 .callCard{
   display:flex;
   gap:12px;
   align-items:center;
   justify-content:space-between;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   border-radius:18px;
   padding:14px;
   margin: 10px 0 12px;
 }
+
 .callCardTitle{ font-weight:900; margin-bottom:4px; }
 .callCardNumber{ font-weight:900; font-size:16px; margin-bottom:2px; }
 .callCardMeta{ color: var(--muted); font-size:12px; }
+
 .callCardBtn{
   flex:0 0 auto;
   padding:12px 14px;
   border-radius:999px;
   background: var(--red);
-  color:#fff;
+  color:#fff !important;
   font-weight:900;
   min-width:110px;
   text-align:center;
+  min-height:44px;
 }
 
 .form .fieldLabel{
   display:block;
-  font-weight:800;
+  font-weight:900;
   margin: 10px 0 6px;
   color:#e9eefc;
   font-size:13px;
 }
+
 input, textarea{
   width:100%;
   padding:12px;
   border-radius:14px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.05);
   color:#fff;
   outline:none;
   font-size:14px;
 }
+
 textarea{ min-height:90px; resize:vertical; }
 
 .fineprint{
@@ -328,34 +384,36 @@ textarea{ min-height:90px; resize:vertical; }
   font-size:12px;
   line-height:1.4;
 }
+
 .success{
   display:none;
   margin-top:10px;
   color:#4caf50;
-  font-weight:800;
+  font-weight:900;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footerNote{
   color: var(--muted);
   font-size:12px;
   text-align:center;
   padding:10px 6px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.10);
   border-radius:18px;
   background: rgba(255,255,255,.04);
 }
 
-/* STICKY BULLES */
+/* ================= STICKY BULLES ================= */
 .sticky{
   position:fixed;
   left:12px;
   right:12px;
-  bottom:12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
   display:flex;
   gap:10px;
   z-index:70;
 }
+
 .bubble{
   flex:1;
   padding:16px;
@@ -363,8 +421,14 @@ textarea{ min-height:90px; resize:vertical; }
   text-align:center;
   font-weight:900;
   box-shadow: 0 10px 26px rgba(0,0,0,.45);
+  min-height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
 }
-.bubble.call{ background: var(--red); color:#fff; }
-.bubble.devis{ background: var(--yellow); color:#000; }
 
-.spacer{ height: 120px; }
+.bubble.call{ background: var(--red); color:#fff !important; }
+.bubble.devis{ background: var(--yellow); color:#000 !important; }
+
+.spacer{ height: 40px; }
