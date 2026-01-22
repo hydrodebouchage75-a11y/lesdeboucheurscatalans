@@ -25,9 +25,7 @@
         <span class="callText">Appeler</span>
       </a>
 
-      <button class="menuBtn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
-        ☰
-      </button>
+      <button class="menuBtn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
@@ -43,7 +41,7 @@
       </div>
 
       <nav class="menuLinks">
-        <a href="#services" class="menuLink">Services & garanties</a>
+        <a href="#top" class="menuLink">Accueil</a>
         <a href="#zones" class="menuLink">Zone 66</a>
         <a href="#avis" class="menuLink">Avis</a>
         <a href="#devis" class="menuLink">Contact / Devis</a>
@@ -58,9 +56,9 @@
     </div>
   </div>
 
-  <main>
+  <main id="top">
 
-    <!-- HERO -->
+    <!-- (1) HERO -->
     <section class="section">
       <div class="card hero">
         <div class="badgeRow">
@@ -69,7 +67,7 @@
 
         <h1>Débouchage en urgence – Pyrénées-Orientales – 24/7</h1>
         <p class="sub">
-          Intervention rapide dans tout le département 66 (WC, évier, douche, colonne, regards, extérieur).
+          Intervention rapide dans tout le département 66.
         </p>
 
         <a class="phonePill" href="tel:+33660356917" aria-label="Appeler 06 60 35 69 17">
@@ -80,120 +78,54 @@
           <a class="btn btnCall" href="tel:+33660356917">📞 Appeler maintenant</a>
           <a class="btn btnGhost" href="#devis">📩 Devis rapide</a>
         </div>
-
-        <div class="miniGrid">
-          <div class="miniItem">✅ Devis annoncé avant</div>
-          <div class="miniItem">✅ Intervention rapide</div>
-          <div class="miniItem">✅ Travail propre</div>
-          <div class="miniItem">✅ Matériel pro</div>
-        </div>
       </div>
     </section>
 
-    <!-- SERVICES + GARANTIES (fusion) -->
-    <section class="section" id="services">
-      <div class="card">
-        <h2>Services & garanties</h2>
-        <p class="sub">
-          Objectif : régler le problème vite, proprement, avec un tarif annoncé avant intervention.
-        </p>
-
-        <div class="trustGrid">
-          <div class="trustItem">
-            <div class="trustTitle">Débouchage canalisation</div>
-            <div class="trustText">WC, évier, lavabo, douche, baignoire, extérieur. Méthodes efficaces et sans dégâts.</div>
-          </div>
-
-          <div class="trustItem">
-            <div class="trustTitle">Pompage & assainissement</div>
-            <div class="trustText">Selon le besoin (eaux usées, regards, etc.). Travail propre et sécurisé.</div>
-          </div>
-
-          <div class="trustItem">
-            <div class="trustTitle">Inspection & diagnostic</div>
-            <div class="trustText">Quand ça revient : on identifie la cause + conseils simples pour éviter que ça recommence.</div>
-          </div>
-        </div>
-
-        <div class="bullets">
-          <div class="bullet">🟡 <strong>Prix clair :</strong> tarif annoncé avant intervention</div>
-          <div class="bullet">🧰 <strong>Matériel pro :</strong> résultat durable + respect des lieux</div>
-          <div class="bullet">⏱️ <strong>Réactivité :</strong> urgence 24/7 selon disponibilité</div>
-          <div class="bullet">📍 <strong>Zone :</strong> tout le département 66</div>
-        </div>
-
-        <a class="btn btnCall" href="tel:+33660356917">📞 Appeler maintenant</a>
-      </div>
-    </section>
-
-    <!-- ZONES -->
+    <!-- (2) ZONES + VILLE/ADRESSE (pré-remplissage devis) -->
     <section class="section" id="zones">
       <div class="card">
-        <h2>Zone d’intervention : 66</h2>
-        <p class="sub">Intervention dans tout le département. Exemples :</p>
+        <h2>Zones d’intervention</h2>
 
-        <div class="chips">
-          <span class="chip">Perpignan</span>
-          <span class="chip">Canet-en-Roussillon</span>
-          <span class="chip">Saint-Cyprien</span>
-          <span class="chip">Argelès-sur-Mer</span>
-          <span class="chip">Thuir</span>
-          <span class="chip">Pia</span>
-          <span class="chip">Cabestany</span>
-          <span class="chip">Toulouges</span>
+        <div class="zoneIntro">
+          <div class="zoneLine">✅ <strong>Toutes les communes du département 66</strong> (Pyrénées-Orientales).</div>
+          <div class="zoneLine">📍 Recherche ta ville + ton adresse pour pré-remplir le devis.</div>
         </div>
 
-        <a class="btn btnCall" href="tel:+33660356917">📞 Appel immédiat</a>
+        <div class="fieldGroup">
+          <label class="fieldLabel" for="zoneCity">Votre ville (66)</label>
+          <!-- datalist = Mode A sans Google (suggestions rapides) -->
+          <input id="zoneCity" type="text" placeholder="Ex : Perpignan" list="cityList" autocomplete="address-level2" />
+          <datalist id="cityList">
+            <option value="Perpignan"></option>
+            <option value="Canet-en-Roussillon"></option>
+            <option value="Saint-Cyprien"></option>
+            <option value="Argelès-sur-Mer"></option>
+            <option value="Thuir"></option>
+            <option value="Pia"></option>
+            <option value="Cabestany"></option>
+            <option value="Toulouges"></option>
+          </datalist>
+
+          <label class="fieldLabel" for="zoneAddress">Votre adresse</label>
+          <!-- Pour Google Places (Mode B), on utilisera ce champ -->
+          <input id="zoneAddress" type="text" placeholder="Ex : 10 rue ..." autocomplete="street-address" />
+        </div>
+
+        <div class="zoneStatus" id="zoneStatus">✅ Couverture : 66  Ville : —</div>
+
+        <button class="btn btnCall" id="prefillBtn" type="button">✅ Pré-remplir le devis</button>
+
+        <div class="zoneTip">
+          Astuce : si l’adresse n’apparaît pas, vous pouvez la taper manuellement dans “Message”.
+        </div>
+
+        <div class="dividerSoft"></div>
+
+        <a class="btn btnGhost" href="#devis">📩 Aller au devis</a>
       </div>
     </section>
 
-    <!-- AVIS (plus naturels) -->
-    <section class="section" id="avis">
-      <div class="card">
-        <h2>Avis clients</h2>
-        <p class="sub">Exemples de retours fréquents (rapide, propre, efficace).</p>
-
-        <div class="reviews">
-
-          <div class="review">
-            <div class="reviewTop">
-              <div class="stars" aria-label="5 étoiles">★★★★★</div>
-              <div class="who">C. D. — Perpignan</div>
-            </div>
-            <div class="reviewText">“WC bouché, appelé en fin d’après-midi. Intervention le jour même. Pro, explique bien, et propre en repartant.”</div>
-          </div>
-
-          <div class="review">
-            <div class="reviewTop">
-              <div class="stars" aria-label="5 étoiles">★★★★★</div>
-              <div class="who">N. G. — Argelès</div>
-            </div>
-            <div class="reviewText">“Tarif annoncé avant de venir, arrivé rapidement. Débouchage ok, plus de refoulement depuis. Très correct.”</div>
-          </div>
-
-          <div class="review">
-            <div class="reviewTop">
-              <div class="stars" aria-label="5 étoiles">★★★★★</div>
-              <div class="who">M. R. — Saint-Cyprien</div>
-            </div>
-            <div class="reviewText">“Évier qui refoulait, bouchon plus loin que prévu. Il a pris le temps, pas de dégâts, et bons conseils.”</div>
-          </div>
-
-          <div class="review">
-            <div class="reviewTop">
-              <div class="stars" aria-label="4 étoiles">★★★★☆</div>
-              <div class="who">S. P. — Canet</div>
-            </div>
-            <div class="reviewText">“Arrivé dans l’heure. Problème plus compliqué mais communication claire. Je referai appel si besoin.”</div>
-          </div>
-
-        </div>
-
-        <a class="btn btnCall" href="tel:+33660356917">📞 Appeler maintenant</a>
-      </div>
-    </section>
-
-    <!-- DEVIS -->
+    <!-- DEVIS (le bouton “pré-remplir” remplit Ville + Message ici) -->
     <section class="section" id="devis">
       <div class="card">
         <h2>📩 Devis rapide / Être rappelé</h2>
@@ -230,6 +162,42 @@
       </div>
     </section>
 
+    <!-- (3) AVIS EN BAS DE PAGE -->
+    <section class="section" id="avis">
+      <div class="card">
+        <h2>Avis clients</h2>
+        <p class="sub">Quelques retours fréquents (rapide, propre, efficace).</p>
+
+        <div class="reviews">
+          <div class="review">
+            <div class="reviewTop">
+              <div class="stars" aria-label="5 étoiles">★★★★★</div>
+              <div class="who">M. L. — Perpignan</div>
+            </div>
+            <div class="reviewText">“Arrivé vite, débouchage fait proprement. Explications claires, je recommande.”</div>
+          </div>
+
+          <div class="review">
+            <div class="reviewTop">
+              <div class="stars" aria-label="5 étoiles">★★★★★</div>
+              <div class="who">S. R. — Canet</div>
+            </div>
+            <div class="reviewText">“Très pro, on m’a annoncé le prix avant. Intervention nickel.”</div>
+          </div>
+
+          <div class="review">
+            <div class="reviewTop">
+              <div class="stars" aria-label="5 étoiles">★★★★★</div>
+              <div class="who">J. P. — Saint-Cyprien</div>
+            </div>
+            <div class="reviewText">“Efficace et rapide. Bon contact, travail propre.”</div>
+          </div>
+        </div>
+
+        <a class="btn btnCall" href="tel:+33660356917">📞 Appeler maintenant</a>
+      </div>
+    </section>
+
     <section class="section">
       <div class="footerNote">
         © Les Déboucheurs Catalans — Débouchage & assainissement — Département 66
@@ -244,6 +212,11 @@
     <a href="tel:+33660356917" class="bubble call">📞 Appel immédiat</a>
     <a href="#devis" class="bubble devis">📩 Devis</a>
   </div>
+
+  <!-- OPTION B (Google Places) : décommenter quand tu auras ta clé -->
+  <!--
+  <script src="https://maps.googleapis.com/maps/api/js?key=COLLE_TA_CLE_ICI&libraries=places&language=fr&region=FR"></script>
+  -->
 
   <script src="script.js"></script>
 </body>
