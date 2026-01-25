@@ -1,145 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Les Déboucheurs Catalans – Débouchage 66 – 24/7</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Les Déboucheurs Catalans • Débouchage 66 • 24/7</title>
+  <meta name="description" content="Débouchage en urgence dans les Pyrénées-Orientales (66) 24/7. Appel direct." />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- (Optionnel) Google tag GA4 si tu veux plus tard
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZP5KQCNYDD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZP5KQCNYDD');
+  </script>
+  -->
 </head>
+
 <body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__title">Les Déboucheurs Catalans</div>
+      <div class="brand__sub">Débouchage • 66 • 24/7</div>
+    </div>
 
-<header class="topbar">
-  <div>
-    <strong>Les Déboucheurs Catalans</strong><br>
-    <span class="small">Débouchage • 66 • 24/7</span>
-  </div>
-  <a href="tel:0660356917" class="btn-call">Appeler</a>
-</header>
+    <div class="topbar__actions">
+      <a class="pill pill--call" href="tel:+33660356917" data-track="call_click" aria-label="Appeler">
+        <span class="pill__icon">📞</span>
+        <span class="pill__text">Appeler</span>
+      </a>
 
-<!-- HERO -->
-<section class="card hero">
-  <span class="badge">Urgence 24/7 • Pyrénées-Orientales (66)</span>
-  <h1>Débouchage en urgence –<br>Pyrénées-Orientales – 24/7</h1>
-  <p>
-    Intervention rapide dans tout le département 66<br>
-    (WC, évier, douche, colonne, regards, extérieur).
-  </p>
+      <button class="pill pill--menu" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="pill__icon">☰</span>
+      </button>
+    </div>
+  </header>
 
-  <div class="phone-box">
-    <a href="tel:0660356917">📞 06 60 35 69 17</a>
-  </div>
+  <!-- Menu overlay -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="overlay__panel">
+      <div class="overlay__head">
+        <div>
+          <div class="overlay__title">Menu</div>
+          <div class="overlay__subtitle">Accès rapide</div>
+        </div>
+        <button class="overlay__close" id="closeMenu" aria-label="Fermer">✕</button>
+      </div>
 
-  <a href="tel:0660356917" class="btn primary">📞 Appeler maintenant</a>
-  <a href="#devis" class="btn outline">📩 Devis rapide</a>
-</section>
+      <nav class="overlay__nav">
+        <a href="#devis" class="overlay__link">📩 Devis / Être rappelé</a>
+        <a href="#zone" class="overlay__link">📍 Zone 66</a>
+        <a href="#avis" class="overlay__link">⭐ Avis</a>
+        <a href="#services" class="overlay__link">🧰 Services & garanties</a>
+      </nav>
 
-<!-- DEVIS -->
-<section id="devis" class="card">
-  <h2>📩 Devis rapide / Être rappelé</h2>
-  <p class="muted">
-    Remplis le formulaire → ton SMS s’ouvre automatiquement → envoie.
-  </p>
-
-  <form id="smsForm">
-    <input type="tel" id="phone" placeholder="Téléphone (obligatoire)" required>
-    <input type="text" id="city" placeholder="Ville (optionnel)">
-    <textarea id="message" placeholder="Message (optionnel)"></textarea>
-
-    <button type="submit" class="btn primary">
-      Envoyer par SMS
-    </button>
-  </form>
-</section>
-
-<!-- ZONE -->
-<section class="card">
-  <h2>📍 Zone d’intervention : Pyrénées-Orientales (66)</h2>
-  <p>✅ Intervention sur l’ensemble du département 66.</p>
-
-  <div class="zone-box">
-    <svg viewBox="0 0 200 240" class="map">
-      <path d="M80 10 L120 20 L150 60 L145 110 L165 160 L120 220 L60 200 L40 140 L55 80 Z"
-            fill="#2c2f36" stroke="#facc15" stroke-width="4"/>
-      <circle cx="120" cy="40" r="12" fill="#facc15"/>
-      <text x="113" y="45" font-size="12" fill="#000">66</text>
-    </svg>
-
-    <div>
-      <span class="pill">Couverture totale</span>
-      <p class="muted">
-        Côte, arrière-pays, villages.<br>
-        Appel direct = prise en charge rapide selon disponibilité.
-      </p>
-
-      <div class="btn-row">
-        <a href="tel:0660356917" class="btn primary">📞 Appeler</a>
-        <a href="#devis" class="btn outline">📩 Devis</a>
+      <div class="overlay__cta">
+        <a class="btn btn--primary" href="tel:+33660356917" data-track="call_click">
+          📞 Appeler 06 60 35 69 17
+        </a>
       </div>
     </div>
   </div>
-</section>
 
-<!-- AVIS -->
-<section class="card">
-  <h2>⭐ Avis clients</h2>
+  <main class="wrap">
 
-  <div class="review">
-    ★★★★★ — C. D. (Perpignan)<br>
-    “WC bouché, appelé en fin d’après-midi. Intervention le jour même.
-    Explications claires et propre en repartant.”
+    <!-- HERO -->
+    <section class="card hero" id="top">
+      <div class="tagline">Urgence 24/7 • Pyrénées-Orientales (66)</div>
+
+      <h1>Débouchage en urgence –<br/>Pyrénées-Orientales – 24/7</h1>
+
+      <p class="muted">
+        Intervention rapide dans tout le département 66 (WC, évier, douche, colonne, regards, extérieur).
+      </p>
+
+      <a class="phone" href="tel:+33660356917" data-track="call_click">
+        <span class="phone__icon">📞</span>
+        <span class="phone__num">06 60 35 69 17</span>
+      </a>
+
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="tel:+33660356917" data-track="call_click">📞 Appeler maintenant</a>
+        <button class="btn btn--ghost" id="scrollDevis">📩 Devis rapide</button>
+      </div>
+    </section>
+
+    <!-- DEVIS -->
+    <section class="card" id="devis">
+      <h2>📩 Devis rapide / Être rappelé</h2>
+      <p class="muted">Appelle directement ou envoie un SMS pré-rempli en 10 secondes.</p>
+
+      <div class="callbox">
+        <div class="callbox__left">
+          <div class="callbox__label">Appel direct</div>
+          <div class="callbox__num">06 60 35 69 17</div>
+          <div class="callbox__meta">Urgence 24/7 • Pyrénées-Orientales (66)</div>
+        </div>
+        <a class="btn btn--danger" href="tel:+33660356917" data-track="call_click">Appeler</a>
+      </div>
+
+      <form id="quickForm" class="form" novalidate>
+        <label class="field">
+          <span>Téléphone (obligatoire)</span>
+          <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                 placeholder="Ex : 06 00 00 00 00" required />
+        </label>
+
+        <label class="field">
+          <span>Ville (optionnel)</span>
+          <input id="fCity" name="city" type="text" autocomplete="address-level2"
+                 placeholder="Ex : Perpignan" />
+        </label>
+
+        <label class="field">
+          <span>Message (optionnel)</span>
+          <textarea id="fMsg" name="msg" rows="4" placeholder="Ex : WC bouché, urgence, accès…"></textarea>
+        </label>
+
+        <button class="btn btn--primary btn--wide" type="submit" data-track="form_submit">
+          Envoyer par SMS
+        </button>
+
+        <a class="btn btn--ghost btn--wide" href="tel:+33660356917" data-track="call_click">
+          📞 Appeler maintenant
+        </a>
+
+        <p class="fineprint">
+          En envoyant, vous acceptez d’être recontacté concernant votre demande.
+          Données utilisées uniquement pour vous répondre.
+        </p>
+      </form>
+    </section>
+
+    <!-- ZONE -->
+    <section class="card zone" id="zone">
+      <h2>📍 Zone d’intervention : Pyrénées-Orientales (66)</h2>
+      <p class="muted">Intervention sur l’ensemble du département 66.</p>
+
+      <div class="zone__grid">
+        <div class="zone__map">
+          <!-- Carte stylisée (SVG) : pas besoin d’API -->
+          <svg viewBox="0 0 240 240" width="100%" height="100%" role="img" aria-label="Carte 66">
+            <defs>
+              <linearGradient id="grad66" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#d90429"/>
+                <stop offset="1" stop-color="#f4c500"/>
+              </linearGradient>
+              <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <rect x="14" y="14" width="212" height="212" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+            <!-- Silhouette simplifiée -->
+            <path d="M105 48
+                     C95 65, 84 78, 82 93
+                     C79 114, 92 129, 88 145
+                     C84 160, 92 173, 101 184
+                     C115 200, 132 195, 144 183
+                     C155 172, 160 159, 169 150
+                     C178 142, 174 128, 168 117
+                     C160 100, 176 86, 168 72
+                     C160 56, 138 52, 124 48
+                     C117 46, 111 45, 105 48 Z"
+                  fill="rgba(255,255,255,0.06)" stroke="url(#grad66)" stroke-width="6" filter="url(#glow)"/>
+
+            <circle cx="168" cy="76" r="18" fill="#0b1220" stroke="rgba(255,255,255,0.18)" />
+            <text x="168" y="82" text-anchor="middle" font-size="14" fill="#f4c500" font-weight="700">66</text>
+
+            <text x="120" y="212" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.55)">Pyrénées-Orientales</text>
+          </svg>
+        </div>
+
+        <div class="zone__text">
+          <div class="badge"><span>✅</span> Couverture totale</div>
+          <h3>Intervention sur tout le département</h3>
+          <p class="muted">
+            Côte, arrière-pays, villages : déplacement selon disponibilité.
+          </p>
+
+          <div class="zone__ctas">
+            <a class="btn btn--primary" href="tel:+33660356917" data-track="call_click">📞 Appeler</a>
+            <button class="btn btn--ghost" id="scrollDevis2">📩 Devis</button>
+          </div>
+
+          <div class="examples">
+            Exemples : Perpignan, Canet, Saint-Cyprien, Argelès, Thuir, Pia, Cabestany, Toulouges…
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVIS -->
+    <section class="card" id="avis">
+      <h2>⭐ Avis clients</h2>
+      <p class="muted">Exemples de retours fréquents (rapidité, propreté, efficacité).</p>
+
+      <div class="reviews">
+        <article class="review">
+          <div class="review__top">
+            <div class="stars">★★★★★</div>
+            <div class="who">C. D. — Perpignan</div>
+          </div>
+          <p>
+            “WC bouché, appelé en fin d’après-midi. Intervention le jour même.
+            Explications claires et propre en repartant.”
+          </p>
+        </article>
+
+        <!-- MODIFIÉ #1 -->
+        <article class="review">
+          <div class="review__top">
+            <div class="stars">★★★★★</div>
+            <div class="who">N. G. — Argelès-sur-Mer</div>
+          </div>
+          <p>
+            “Intervention réalisée de nuit après un dégât des eaux.
+            La personne a tout nettoyé après son passage. Je recommande.”
+          </p>
+        </article>
+
+        <!-- MODIFIÉ #2 -->
+        <article class="review">
+          <div class="review__top">
+            <div class="stars">★★★★★</div>
+            <div class="who">M. R. — Saint-Cyprien</div>
+          </div>
+          <p>
+            “Débouchage de WC effectué rapidement et proprement.”
+          </p>
+        </article>
+
+        <article class="review">
+          <div class="review__top">
+            <div class="stars">★★★★★</div>
+            <div class="who">S. P. — Canet-en-Roussillon</div>
+          </div>
+          <p>
+            “Très réactif et professionnel. Intervention propre, explications claires,
+            et résultat immédiat. Je recommande.”
+          </p>
+        </article>
+      </div>
+
+      <a class="btn btn--primary btn--wide" href="tel:+33660356917" data-track="call_click">📞 Appeler maintenant</a>
+    </section>
+
+    <!-- SERVICES (tout en bas comme tu voulais) -->
+    <section class="card" id="services">
+      <h2>Services & garanties</h2>
+      <p class="muted">Objectif : régler le problème vite et proprement.</p>
+
+      <div class="service">
+        <h3>Débouchage canalisation</h3>
+        <p class="muted">WC, évier, lavabo, douche, baignoire, extérieur. Méthodes efficaces et sans dégâts.</p>
+      </div>
+
+      <div class="service">
+        <h3>Pompage & assainissement</h3>
+        <p class="muted">Selon le besoin (eaux usées, regards, etc.). Travail propre et sécurisé.</p>
+      </div>
+
+      <div class="service">
+        <h3>Inspection & diagnostic</h3>
+        <p class="muted">Quand ça revient : on identifie la cause + conseils simples pour éviter que ça recommence.</p>
+      </div>
+
+      <div class="infoPills">
+        <div class="infoPill">🟡 <b>Transparence</b> : explications claires avant intervention</div>
+        <div class="infoPill">⏱️ <b>Réactivité</b> : urgence 24/7 selon disponibilité</div>
+        <div class="infoPill">📍 <b>Zone</b> : Pyrénées-Orientales (66)</div>
+      </div>
+
+      <a class="btn btn--primary btn--wide" href="tel:+33660356917" data-track="call_click">📞 Appeler maintenant</a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__links">
+        <a href="#top">Haut de page</a>
+        <span>•</span>
+        <a href="#services">Services</a>
+        <span>•</span>
+        <a href="#devis">Contact / Devis</a>
+      </div>
+      <div class="footer__copy">© <span id="year"></span> Les Déboucheurs Catalans</div>
+    </footer>
+
+  </main>
+
+  <!-- Sticky bottom bar (bulles) -->
+  <div class="sticky">
+    <a class="sticky__btn sticky__btn--danger" href="tel:+33660356917" data-track="call_click">
+      📞 Appel immédiat
+    </a>
+    <button class="sticky__btn sticky__btn--primary" id="stickyDevis">
+      📩 Devis
+    </button>
   </div>
 
-  <div class="review">
-    ★★★★★ — N. G. (Argelès)<br>
-    “Arrivé rapidement, tarif expliqué avant. Débouchage OK,
-    plus aucun souci depuis.”
-  </div>
-
-  <div class="review">
-    ★★★★★ — M. R. (Saint-Cyprien)<br>
-    “Bouchon plus loin que prévu, il a pris le temps.
-    Pas de dégâts, bons conseils.”
-  </div>
-
-  <div class="review">
-    ★★★★★ — S. P. (Canet)<br>
-    “Très réactif et professionnel. Intervention propre,
-    résultat immédiat. Je recommande.”
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="card">
-  <h2>Services & garanties</h2>
-
-  <div class="service">
-    <strong>Débouchage canalisation</strong><br>
-    WC, évier, lavabo, douche, baignoire, extérieur.
-  </div>
-
-  <div class="service">
-    <strong>Pompage & assainissement</strong><br>
-    Eaux usées, regards, interventions ciblées.
-  </div>
-
-  <div class="service">
-    <strong>Inspection & diagnostic</strong><br>
-    Identification de la cause + conseils prévention.
-  </div>
-
-  <div class="info">🟡 Transparence : explications claires</div>
-  <div class="info">⏱️ Réactivité : urgence 24/7</div>
-  <div class="info">📍 Zone : Pyrénées-Orientales (66)</div>
-
-  <a href="tel:0660356917" class="btn primary">📞 Appeler maintenant</a>
-</section>
-
-<!-- STICKY -->
-<div class="sticky">
-  <a href="tel:0660356917" class="btn red">📞 Appel immédiat</a>
-  <a href="#devis" class="btn yellow">📩 Devis</a>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
