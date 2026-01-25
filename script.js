@@ -2,7 +2,7 @@
    CONFIG
 ========================== */
 const BUSINESS_PHONE_RAW = "0660356917"; // tel:
-const BUSINESS_PHONE_SMS = "+"; // sms: (format international conseillé)
+const BUSINESS_PHONE_SMS = "+33660356917"; // sms: (format international conseillé)
 
 /* ==========================
    TRACKING
