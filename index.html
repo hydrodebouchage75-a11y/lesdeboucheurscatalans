@@ -93,7 +93,7 @@
       </div>
     </section>
 
-    <!-- DEVIS / FORM (avant Zone comme tu veux) -->
+    <!-- DEVIS / FORM -->
     <section class="card" id="devis">
       <h2 class="h2"><span class="h2__icon">✉️</span> Devis rapide / Être rappelé</h2>
       <p class="muted">Appelle directement ou laisse ton numéro : on te rappelle rapidement.</p>
@@ -135,55 +135,27 @@
       </form>
     </section>
 
-    <!-- ZONE 66 + CARTE -->
+    <!-- ZONE (sans carte) -->
     <section class="card" id="zone">
       <h2 class="h2"><span class="h2__icon">📍</span> Zone d’intervention : Pyrénées-Orientales (66)</h2>
       <p class="muted">Intervention sur l’ensemble du département 66.</p>
 
-      <div class="zoneGrid">
-        <div class="mapCard" aria-label="Carte des Pyrénées-Orientales (66)">
-          <!-- SVG propre, sans effets / sans dégradés -->
-          <svg class="mapSvg" viewBox="0 0 320 360" role="img" aria-label="Département 66">
-            <rect x="18" y="18" width="284" height="284" rx="24" ry="24" class="mapFrame"></rect>
-
-            <!-- Silhouette 66 (stylisée mais propre) -->
-            <path class="mapShape"
-              d="M149 56
-                 C120 78, 94 108, 86 146
-                 C77 189, 90 231, 117 255
-                 C142 277, 177 290, 208 278
-                 C233 268, 254 245, 258 217
-                 C262 190, 251 168, 252 147
-                 C253 123, 246 98, 231 83
-                 C214 66, 186 52, 166 52
-                 C159 52, 154 53, 149 56Z">
-            </path>
-
-            <!-- Pastille "66" -->
-            <circle cx="238" cy="122" r="26" class="mapBadgeCircle"></circle>
-            <text x="238" y="129" text-anchor="middle" class="mapBadgeText">66</text>
-
-            <text x="160" y="330" text-anchor="middle" class="mapLabel">Pyrénées-Orientales</text>
-          </svg>
+      <div class="zoneSimple">
+        <div class="tag">
+          <span class="tag__icon">✅</span>
+          <span>Couverture totale</span>
         </div>
 
-        <div class="zoneInfo">
-          <div class="tag">
-            <span class="tag__icon">✅</span>
-            <span>Couverture totale</span>
-          </div>
+        <h3 class="h3">Intervention sur tout le département</h3>
+        <p class="muted">Côte, arrière-pays, villages : déplacement selon disponibilité.</p>
 
-          <h3 class="h3">Intervention sur tout le département</h3>
-          <p class="muted">Côte, arrière-pays, villages : déplacement selon disponibilité.</p>
+        <div class="miniCtas">
+          <a class="btn btn--yellow btn--wide" href="tel:0660356917">📞 Appeler</a>
+          <a class="btn btn--dark btn--wide" href="#devis">✉️ Devis</a>
+        </div>
 
-          <div class="miniCtas">
-            <a class="btn btn--yellow btn--wide" href="tel:0660356917">📞 Appeler</a>
-            <a class="btn btn--dark btn--wide" href="#devis">✉️ Devis</a>
-          </div>
-
-          <div class="examples">
-            Exemples : Perpignan, Canet, Saint-Cyprien, Argelès, Thuir, Pia, Cabestany, Toulouges…
-          </div>
+        <div class="examples">
+          Exemples : Perpignan, Canet, Saint-Cyprien, Argelès, Thuir, Pia, Cabestany, Toulouges…
         </div>
       </div>
     </section>
@@ -203,7 +175,6 @@
         </p>
       </div>
 
-      <!-- MODIFIÉ (tu voulais changer celui-ci) -->
       <div class="review">
         <div class="review__top">
           <div class="stars" aria-label="5 étoiles">★★★★★</div>
@@ -214,7 +185,6 @@
         </p>
       </div>
 
-      <!-- MODIFIÉ (tu voulais changer celui-ci) -->
       <div class="review">
         <div class="review__top">
           <div class="stars" aria-label="5 étoiles">★★★★★</div>
@@ -238,7 +208,7 @@
       <a class="btn btn--yellow btn--wide" href="tel:0660356917">📞 Appeler maintenant</a>
     </section>
 
-    <!-- SERVICES & GARANTIES (tout en bas comme tu veux) -->
+    <!-- SERVICES & GARANTIES -->
     <section class="card" id="services">
       <h2 class="h2">Services & garanties</h2>
       <p class="muted">Objectif : régler le problème vite, proprement.</p>
