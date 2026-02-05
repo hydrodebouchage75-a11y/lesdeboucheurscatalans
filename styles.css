@@ -1,17 +1,12 @@
 :root{
   --bg: #0b1220;
-  --panel: #121b2d;
-  --panel2: #0f1727;
   --text: #eef3ff;
   --muted: rgba(238,243,255,.72);
-  --stroke: rgba(255,255,255,.10);
 
-  --red: #d0102b;
-  --yellow: #f3c312;
+  --red: #d0102b;      /* Appel */
+  --yellow: #f3c312;   /* Devis */
 
   --radius: 18px;
-  --radius2: 26px;
-
   --shadow: 0 10px 24px rgba(0,0,0,.35);
 }
 
@@ -77,14 +72,7 @@ button{ font: inherit; }
   justify-content:center;
   gap: 8px;
   cursor: pointer;
-  box-shadow: none;
   user-select: none;
-}
-
-.btn--call{
-  background: var(--red);
-  border-color: rgba(255,255,255,.0);
-  font-weight: 800;
 }
 
 .btn--menu{
@@ -93,17 +81,19 @@ button{ font: inherit; }
   border-radius: 14px;
 }
 
-.btn--primary{
-  background: var(--yellow);
-  border-color: rgba(255,255,255,.0);
-  color: #101522;
+/* ✅ Appel = rouge */
+.btn--call{
+  background: var(--red);
+  border-color: transparent;
   font-weight: 900;
 }
 
-.btn--ghost{
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,255,255,.10);
-  font-weight: 800;
+/* ✅ Devis = jaune */
+.btn--devis{
+  background: var(--yellow);
+  border-color: transparent;
+  color: #101522;
+  font-weight: 900;
 }
 
 .btn--wide{ width: 100%; }
@@ -184,23 +174,11 @@ p{ margin: 0 0 10px; }
   justify-content: space-between;
   gap: 12px;
 }
-.callCard__title{
-  font-weight: 900;
-  margin-bottom: 2px;
-}
-.callCard__phone{
-  font-weight: 900;
-  font-size: 18px;
-}
-.callCard__small{
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 4px;
-}
+.callCard__title{ font-weight: 900; margin-bottom: 2px; }
+.callCard__phone{ font-weight: 900; font-size: 18px; }
+.callCard__small{ color: var(--muted); font-size: 12px; margin-top: 4px; }
 
-.form{
-  margin-top: 14px;
-}
+.form{ margin-top: 14px; }
 .label{
   display:block;
   margin: 12px 0 8px;
@@ -260,15 +238,8 @@ p{ margin: 0 0 10px; }
   gap: 10px;
   margin-bottom: 6px;
 }
-.stars{
-  letter-spacing: 2px;
-  font-weight: 900;
-}
-.who{
-  color: var(--muted);
-  font-weight: 800;
-  font-size: 13px;
-}
+.stars{ letter-spacing: 2px; font-weight: 900; }
+.who{ color: var(--muted); font-weight: 800; font-size: 13px; }
 .review p{ margin: 0; color: rgba(238,243,255,.90); }
 
 .list{
@@ -341,11 +312,11 @@ p{ margin: 0 0 10px; }
 
 .sticky__btn--call{
   background: var(--red);
-  border-color: rgba(255,255,255,.0);
+  border-color: transparent;
 }
 .sticky__btn--devis{
   background: var(--yellow);
-  border-color: rgba(255,255,255,.0);
+  border-color: transparent;
   color: #101522;
 }
 
@@ -358,7 +329,6 @@ p{ margin: 0 0 10px; }
   display:none;
   padding: 14px;
 }
-
 .overlay.is-open{ display:block; }
 
 .overlay__panel{
@@ -420,7 +390,6 @@ p{ margin: 0 0 10px; }
 .overlay__phone{ font-weight: 900; font-size: 18px; display:inline-block; margin-bottom: 4px; }
 .overlay__small{ color: var(--muted); font-size: 12px; }
 
-/* Small screens tweaks */
 @media (max-width: 360px){
   .hero h1{ font-size: 26px; }
   .phonePill__num{ font-size: 17px; }
