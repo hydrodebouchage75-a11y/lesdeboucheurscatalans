@@ -1,205 +1,427 @@
-/* ==========================
-   BASE
-========================== */
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
+:root{
+  --bg: #0b1220;
+  --panel: #121b2d;
+  --panel2: #0f1727;
+  --text: #eef3ff;
+  --muted: rgba(238,243,255,.72);
+  --stroke: rgba(255,255,255,.10);
+
+  --red: #d0102b;
+  --yellow: #f3c312;
+
+  --radius: 18px;
+  --radius2: 26px;
+
+  --shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
+*{ box-sizing: border-box; }
+html,body{ height: 100%; }
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:#0b1220;
-  color:#eaf1ff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--text);
 }
 
-a{ color:inherit; text-decoration:none; }
+a{ color: inherit; text-decoration: none; }
+button{ font: inherit; }
 
-/* ==========================
-   LAYOUT
-========================== */
-main{
-  max-width: 720px;
+.wrap{
+  max-width: 520px;
   margin: 0 auto;
-  padding: 14px 14px 40px;
+  padding: 16px 14px calc(98px + env(safe-area-inset-bottom));
 }
 
-.card{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 18px;
-  padding: 18px;
-  margin: 14px 0;
-  box-shadow: 0 12px 28px rgba(0,0,0,.35);
-}
-
-/* ==========================
-   HEADER
-========================== */
-.top{
+.topbar{
   position: sticky;
-  top: 0;
-  z-index: 50;
+  top:0;
+  z-index: 20;
+  background: rgba(11,18,32,.90);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 12px 14px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  padding: 12px 14px;
-  background: rgba(11,18,32,.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,.10);
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.top strong{
-  display:block;
+.brand__title{
+  font-weight: 800;
+  letter-spacing: .2px;
   font-size: 16px;
   line-height: 1.1;
-  letter-spacing: .2px;
 }
-.muted{
-  color: rgba(255,255,255,.70);
+.brand__sub{
+  margin-top: 3px;
+  color: var(--muted);
   font-size: 13px;
-  line-height: 1.35;
 }
 
-/* ==========================
-   TYPO
-========================== */
-h1{
-  margin: 10px 0 10px;
-  font-size: 26px;
-  line-height: 1.1;
-  letter-spacing: -0.2px;
-}
-h2{
-  margin: 0 0 10px;
-  font-size: 22px;
-  line-height: 1.15;
-  letter-spacing: -0.2px;
-}
-p{ margin: 0 0 10px; line-height: 1.55; }
-
-/* ==========================
-   BADGE / PHONE BOX
-========================== */
-.badge{
-  display:inline-flex;
+.topbar__actions{
+  display:flex;
   align-items:center;
-  gap:8px;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.10);
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  color: rgba(255,255,255,.78);
+  gap: 10px;
 }
 
-.phoneBox{
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.10);
-  padding: 14px;
-  border-radius: 14px;
-  text-align:center;
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: .4px;
-  margin: 14px 0;
-}
-
-/* ==========================
-   BUTTONS
-========================== */
 .btn{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 12px 14px;
+  min-height: 44px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  padding: 14px 16px;
-  border-radius: 999px;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: none;
+  user-select: none;
+}
+
+.btn--call{
+  background: var(--red);
+  border-color: rgba(255,255,255,.0);
+  font-weight: 800;
+}
+
+.btn--menu{
+  width: 46px;
+  padding: 0;
+  border-radius: 14px;
+}
+
+.btn--primary{
+  background: var(--yellow);
+  border-color: rgba(255,255,255,.0);
+  color: #101522;
   font-weight: 900;
-  border: 1px solid rgba(0,0,0,.10);
-  min-height: 50px;
-  user-select:none;
-  cursor:pointer;
-  white-space: nowrap;
 }
 
-.btn-red{ background:#dc2626; color:#fff; }
-.btn-yellow{ background:#facc15; color:#111; }
-.btn-dark{
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.14);
-  color:#fff;
+.btn--ghost{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.10);
+  font-weight: 800;
 }
 
-.btn-full{ width: 100%; }
+.btn--wide{ width: 100%; }
 
-/* actions : colonne sur mobile, ligne sur grand écran */
-.actions{
+.card{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  margin-top: 14px;
+}
+
+.hero h1{
+  margin: 10px 0 8px;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -.3px;
+}
+
+.muted{ color: var(--muted); }
+.tiny{ font-size: 12px; line-height: 1.4; }
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.phonePill{
+  margin-top: 14px;
   display:flex;
-  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  min-height: 44px;
+}
+
+.phonePill__num{
+  font-weight: 900;
+  letter-spacing: .3px;
+  font-size: 18px;
+}
+
+.ctaRow{
+  display:flex;
   gap: 12px;
   margin-top: 14px;
 }
-@media (min-width: 520px){
-  .actions{
-    flex-direction: row;
-  }
-  .actions .btn{
-    flex: 1;
-  }
+.ctaRow .btn{ flex: 1; }
+
+h2{
+  margin: 0 0 6px;
+  font-size: 22px;
+  letter-spacing: -.2px;
+}
+p{ margin: 0 0 10px; }
+
+.callCard{
+  margin-top: 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  padding: 14px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.callCard__title{
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+.callCard__phone{
+  font-weight: 900;
+  font-size: 18px;
+}
+.callCard__small{
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
 }
 
-/* ==========================
-   FORM
-========================== */
-form{ margin-top: 12px; }
-
-input, textarea{
-  width:100%;
-  padding: 14px 14px;
+.form{
+  margin-top: 14px;
+}
+.label{
+  display:block;
+  margin: 12px 0 8px;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+.input, .textarea{
+  width: 100%;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.20);
-  color:#fff;
-  font-size: 16px;
+  background: rgba(15,23,39,.55);
+  color: var(--text);
+  padding: 14px 14px;
   outline: none;
+  font-size: 16px;
 }
-textarea{ min-height: 110px; resize: vertical; }
+.input::placeholder, .textarea::placeholder{
+  color: rgba(238,243,255,.45);
+}
+.textarea{ resize: vertical; min-height: 88px; }
 
-input:focus, textarea:focus{
-  border-color: rgba(250,204,21,.55);
-  box-shadow: 0 0 0 4px rgba(250,204,21,.12);
+.form__error{
+  margin-top: 12px;
+  color: #ffd3d8;
+  font-weight: 700;
+  min-height: 18px;
 }
 
-/* ==========================
-   LIST / REVIEWS / SERVICES
-========================== */
-.list{ padding-left: 18px; margin: 0; }
-.list li{ margin: 8px 0; color: rgba(255,255,255,.85); }
+.chips{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 0;
+}
+.chip{
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(238,243,255,.85);
+  font-weight: 800;
+  font-size: 13px;
+}
 
 .review{
-  background: rgba(0,0,0,.18);
-  border: 1px solid rgba(255,255,255,.10);
+  margin-top: 12px;
   padding: 14px;
-  border-radius: 14px;
-  margin: 12px 0;
-  line-height: 1.45;
-  color: rgba(255,255,255,.90);
-}
-
-.service{
-  background: rgba(0,0,0,.18);
+  border-radius: var(--radius);
   border: 1px solid rgba(255,255,255,.10);
-  padding: 12px;
+  background: rgba(255,255,255,.05);
+}
+.review__top{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.stars{
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+.who{
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+.review p{ margin: 0; color: rgba(238,243,255,.90); }
+
+.list{
+  margin-top: 10px;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.list__item{
+  padding: 12px 14px;
   border-radius: 14px;
-  margin: 10px 0;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  font-weight: 700;
+  color: rgba(238,243,255,.92);
 }
 
-/* ==========================
-   LEGAL BUTTONS
-========================== */
-.legalBtns{
+.infoBtns{
   display:flex;
-  flex-direction:column;
+  flex-direction: column;
   gap: 12px;
+  margin-top: 12px;
+}
+.infoBtn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  font-weight: 900;
+}
+
+.footer{
+  padding: 18px 6px 0;
+  text-align:center;
+}
+.footer__small{ color: rgba(238,243,255,.55); font-size: 12px; }
+
+/* STICKY BAR */
+.sticky{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(11,18,32,.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,.06);
+  display:flex;
+  gap: 12px;
+  justify-content:center;
+}
+
+.sticky__btn{
+  flex: 1;
+  max-width: 520px;
+  border-radius: 999px;
+  min-height: 52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+
+.sticky__btn--call{
+  background: var(--red);
+  border-color: rgba(255,255,255,.0);
+}
+.sticky__btn--devis{
+  background: var(--yellow);
+  border-color: rgba(255,255,255,.0);
+  color: #101522;
+}
+
+/* OVERLAY MENU */
+.overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0,0,0,.55);
+  display:none;
+  padding: 14px;
+}
+
+.overlay.is-open{ display:block; }
+
+.overlay__panel{
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: rgba(18,27,45,.98);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.overlay__top{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.overlay__title{ font-weight: 900; font-size: 18px; }
+.overlay__subtitle{ color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+.overlay__close{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.overlay__nav{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0 12px;
+}
+
+.overlay__link{
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  font-weight: 900;
+}
+
+.overlay__cta{ margin-top: 10px; display:flex; flex-direction: column; gap: 12px; }
+
+.overlay__callbox{
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  padding: 12px 14px;
+}
+
+.overlay__callboxTitle{ font-weight: 900; margin-bottom: 4px; }
+.overlay__phone{ font-weight: 900; font-size: 18px; display:inline-block; margin-bottom: 4px; }
+.overlay__small{ color: var(--muted); font-size: 12px; }
+
+/* Small screens tweaks */
+@media (max-width: 360px){
+  .hero h1{ font-size: 26px; }
+  .phonePill__num{ font-size: 17px; }
 }
