@@ -1,26 +1,18 @@
 /* ==========================
    CONFIG
 ========================== */
-const BUSINESS_PHONE_RAW = "0660356917"; // tel:
+const BUSINESS_PHONE_RAW = "0660356917";   // tel:
 const BUSINESS_PHONE_SMS = "+33660356917"; // sms: (format international conseillé)
 
 /* ==========================
    TRACKING
 ========================== */
 function track(eventName, data = {}) {
-  // dataLayer (GTM) si présent
   if (window.dataLayer && typeof window.dataLayer.push === "function") {
     window.dataLayer.push({ event: eventName, ...data });
   }
-
-  // GA4 via gtag si présent
   if (typeof window.gtag === "function") {
     window.gtag("event", eventName, data);
-  }
-
-  // fallback debug
-  if (!window.dataLayer && typeof window.gtag !== "function") {
-    console.log("[track]", eventName, data);
   }
 }
 
@@ -78,16 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuClose) menuClose.addEventListener("click", closeMenu);
   if (overlay) overlay.addEventListener("click", closeMenu);
 
-  // Fermer menu quand on clique un lien
   document.querySelectorAll(".menu__link").forEach(a => {
     a.addEventListener("click", () => closeMenu());
   });
 
-  // Smooth scroll (lien devis)
+  // Smooth scroll vers devis
   const goDevis = $("goDevis");
   if (goDevis){
     goDevis.addEventListener("click", (e) => {
-      // laisser le hash faire, mais on peut smoother
       const target = document.querySelector("#devis");
       if (target){
         e.preventDefault();
@@ -96,17 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // TRACK appels (tel:)
+  // Track appels tel:
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a");
-    if (!a) return;
+    if(!a) return;
     const href = a.getAttribute("href") || "";
     if (href.startsWith("tel:")) {
       track("call_click", { phone: BUSINESS_PHONE_RAW, placement: a.id || "link" });
     }
   });
 
-  // FORM -> ouvre SMS pré-rempli
+  // FORM -> ouvre l'app SMS avec message pré-rempli
   const form = $("quickForm");
   if (form){
     form.addEventListener("submit", (e) => {
@@ -129,9 +119,8 @@ Téléphone client : ${phone}
 Ville : ${city || "-"}
 Message : ${msg || "-"}`;
 
-      // ✅ Redirection directe vers l'app SMS (le client clique juste sur Envoyer)
       const smsUrl = buildSmsLink(BUSINESS_PHONE_SMS, body);
-      window.location.href = smsUrl;
+      window.location.href = smsUrl; // ✅ redirection directe vers SMS
     });
   }
 });
