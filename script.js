@@ -1,9 +1,6 @@
-// ====== CONFIG ======
 const PHONE_DISPLAY = "06 60 35 69 17";
-const TEL_URI = "+33660356917";   // format international recommandé
-const SMS_URI = "+33660356917";   // idem pour SMS
+const SMS_URI = "+33660356917";
 
-// ====== TRACKING (dataLayer si présent, sinon console) ======
 function track(event, data = {}) {
   try {
     if (window.dataLayer && typeof window.dataLayer.push === "function") {
@@ -16,7 +13,6 @@ function track(event, data = {}) {
   }
 }
 
-// ====== Helpers ======
 function $(id) { return document.getElementById(id); }
 
 function scrollToId(targetId) {
@@ -31,18 +27,15 @@ function cleanPhone(s) {
 
 function buildSmsLink(to, body) {
   const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-  // iOS : sms:+33...?&body=...
-  // Android : sms:+33...?body=...
   const sep = isiOS ? "&" : "?";
   return `sms:${to}${sep}body=${encodeURIComponent(body)}`;
 }
 
-// ====== Menu ======
+/* MENU */
 (function menuInit() {
   const menuBtn = $("menuBtn");
   const closeBtn = $("closeMenuBtn");
   const overlay = $("menuOverlay");
-
   if (!menuBtn || !closeBtn || !overlay) return;
 
   function openMenu() {
@@ -51,7 +44,6 @@ function buildSmsLink(to, body) {
     menuBtn.setAttribute("aria-expanded", "true");
     track("menu_open");
   }
-
   function closeMenu() {
     overlay.classList.remove("is-open");
     overlay.setAttribute("aria-hidden", "true");
@@ -60,22 +52,13 @@ function buildSmsLink(to, body) {
 
   menuBtn.addEventListener("click", openMenu);
   closeBtn.addEventListener("click", closeMenu);
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeMenu(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) closeMenu();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  // fermer menu quand on clique un lien
-  overlay.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => closeMenu());
-  });
+  overlay.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
 })();
 
-// ====== Scroll buttons ======
+/* SCROLL */
 document.addEventListener("click", (e) => {
   const btn = e.target.closest("[data-scroll]");
   if (!btn) return;
@@ -83,22 +66,20 @@ document.addEventListener("click", (e) => {
   if (target) scrollToId(target);
 });
 
-// ====== Track tel: clicks ======
+/* TRACK tel: */
 document.addEventListener("click", (e) => {
   const a = e.target.closest("a");
   if (!a) return;
-
   const href = a.getAttribute("href") || "";
   if (href.startsWith("tel:")) {
     track("call_click", { phone: PHONE_DISPLAY });
   }
 });
 
-// ====== Form -> open SMS app with prefilled message ======
+/* FORM -> OPEN SMS PREFILLED */
 (function formInit() {
   const form = $("quickForm");
   const err = $("formError");
-
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
@@ -109,7 +90,6 @@ document.addEventListener("click", (e) => {
     const city = ($("city")?.value || "").trim();
     const msg = ($("msg")?.value || "").trim();
 
-    // validation simple
     const digits = phone.replace(/\D/g, "");
     if (!digits || digits.length < 10) {
       if (err) err.textContent = "Merci d’indiquer un numéro valide (ex : 06 00 00 00 00).";
@@ -127,14 +107,11 @@ document.addEventListener("click", (e) => {
     ].filter(Boolean);
 
     const body = parts.join("\n");
-    const smsLink = buildSmsLink(SMS_URI, body);
-
-    // IMPORTANT : on ne simule pas d’envoi, on ouvre directement l’app SMS
-    window.location.href = smsLink;
+    window.location.href = buildSmsLink(SMS_URI, body);
   });
 })();
 
-// ====== Footer year ======
+/* YEAR */
 (function year() {
   const y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());
